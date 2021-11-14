@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+// always show scrollbar
+body {
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,17 @@
+.heading {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  .metadata {
+    padding: 1rem 0;
+    display: flex;
+    .date::after {
+      content: "•";
+      padding: .8rem;
+    }
+    .tagList {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+  }
+}
