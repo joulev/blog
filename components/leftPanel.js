@@ -8,7 +8,7 @@ export default function LeftPanel() {
       <div className="text-center pb-4">
         <Image src="/avatar.png" width={150} height={150} alt="joulev" />
         <h3>Vu Van Dung</h3>
-        <a href="https://github.com/joulev" className="text-muted">@joulev</a>
+        <a href="https://github.com/joulev" target="_blank" className="text-muted">@joulev</a>
       </div>
       <div className={styles.btnGroup}>
         <Link href="/"><a>Home</a></Link>
@@ -18,7 +18,7 @@ export default function LeftPanel() {
       </div>
       <div className={styles.footer}>
         <div className="small text-muted">
-          Site built with <a href="https://nextjs.org">Next.js</a>.
+          Site built with <a href="https://nextjs.org" target="_blank">Next.js</a>.
         </div>
         <div>Dark mode</div>
       </div>
