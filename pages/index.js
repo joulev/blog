@@ -14,8 +14,8 @@ export function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <Layout title="blah blah" postPage={false} data={{}}>
-      <div>Hi, this is my blog page. You can view a list of all articles below.</div>
+    <Layout title="Home" postPage={false} data={{}}>
+      <h1>Posts</h1>
       <hr />
       {posts.map(post => (
         <div key={post.id}>
