@@ -31,5 +31,5 @@ a {
 .card {
   background: $background;
   color: $foreground;
-  border-color: $gray;
+  border-color: mix($gray, $background, $weight: 40%);
 }
