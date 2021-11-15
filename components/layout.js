@@ -9,7 +9,7 @@ export default function Layout(props) {
       <title>{props.title} - joulev's blog</title>
     </Head>
     <div className="container">
-      <div className="row gx-5">
+      <div className="row">
         <div className="col-md-4">
           <LeftPanel />
         </div>
