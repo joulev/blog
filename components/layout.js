@@ -75,7 +75,7 @@ export default class Layout extends React.Component {
             </svg>
           </CSSTransition>
         </div>
-        <Link href="/">
+        <Link href="/" passHref>
           <div className={
             `${styles.topBtns}
               ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
