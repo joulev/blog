@@ -14,9 +14,9 @@ export function getStaticProps() {
   }
 }
 
-export default function Home({ dark, posts }) {
+export default function Home({ dark, changeMode, posts }) {
   return (
-    <Layout dark={dark} title="Home" postPage={false} data={{}}>
+    <Layout dark={dark} changeMode={changeMode} title="Home" postPage={false} data={{}}>
       <h1>Posts</h1>
       {posts.map(post => (
         <div className="card mb-3" key={post.name}>

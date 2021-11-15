@@ -63,7 +63,7 @@ export default class Layout extends React.Component {
               exitActive:   styles.leftPanelExitActiveLight
             }}>
             <div className={`col-md-4 ${this.props.dark ? styles.leftPanelDark : styles.leftPanelLight}`}>
-              <LeftPanel dark={this.props.dark} />
+              <LeftPanel dark={this.props.dark} changeMode={this.props.changeMode} />
             </div>
           </CSSTransition>
           <div className="col-md-8">

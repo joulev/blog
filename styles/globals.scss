@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:color";
 @import "./variables";
+$primary: map.get($dark-theme, "primary");
 @import "~bootstrap/scss/bootstrap";
 
 html, body {

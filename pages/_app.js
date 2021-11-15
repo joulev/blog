@@ -8,5 +8,5 @@ export default function App({ Component, pageProps }) {
     console.log("updated");
     document.body.className = dark ? "dark" : "light";
   }, [dark]);
-  return <Component dark={dark} {...pageProps} />
+  return <Component dark={dark} changeMode={changeMode} {...pageProps} />
 }
