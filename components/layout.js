@@ -58,7 +58,8 @@ export default class Layout extends React.Component {
           </div>
         </div>
         <div className={
-          `${styles.topBtns} ${this.state.downEnough ? styles.downEnough : styles.notDownEnough}
+          `${styles.topBtns}
+           ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
            ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
           <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
             classNames={{
@@ -76,7 +77,8 @@ export default class Layout extends React.Component {
         </div>
         <Link href="/">
           <div className={
-            `${styles.topBtns} ${this.state.downEnough ? styles.downEnough : styles.notDownEnough}
+            `${styles.topBtns}
+              ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
              ${styles.homeBtn}`}>
             <svg width="24" height="24">
               <line x1= "6" y1="20" x2="18" y2="20" />
