@@ -23,9 +23,9 @@ export default class Layout extends React.Component {
   onScroll = () => {
     const scrollTop = window.scrollY;
     if (this.state.downEnough) {
-      if (scrollTop < 100) this.setState({ downEnough: false });
+      if (scrollTop < 30) this.setState({ downEnough: false });
     } else {
-      if (scrollTop >= 100) this.setState({ downEnough: true });
+      if (scrollTop >= 30) this.setState({ downEnough: true });
     }
   }
   changeSideBarState = () => {
