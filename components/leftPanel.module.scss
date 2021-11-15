@@ -7,6 +7,9 @@
   @media (min-width: 768px) {
     height: 100vh;
   }
+  .avatar {
+    border-radius: 50%;
+  }
   .btnGroup {
     text-align: center;
     a {
