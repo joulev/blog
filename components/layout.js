@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import LeftPanel from "./leftPanel";
 import Content from "./content";
 import styles from "./layout.module.scss";
@@ -28,12 +29,24 @@ export default class Layout extends React.Component {
               data={this.props.data} />
           </div>
         </div>
-        <div className={styles.toggle} onClick={() => {this.setState( { sideBarHidden: !this.state.sideBarHidden } )}}>
+        <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => {this.setState( { sideBarHidden: !this.state.sideBarHidden } )}}>
           <svg width="24" height="24">
             <line x1="0" y1="6" x2="24" y2="6" />
             <line x1="0" y1="18" x2="24" y2="18" />
           </svg>
         </div>
+        <Link href="/">
+          <div className={`${styles.topBtns} ${styles.homeBtn}`}>
+            <svg width="24" height="24">
+              <line x1= "6" y1="20" x2="18" y2="20" />
+              <line x1= "6" y1="20" x2= "6" y2= "8" />
+              <line x1="18" y1="20" x2="18" y2= "8" />
+              <line x1="12" y1= "2" x2= "3" y2="11" />
+              <line x1="12" y1= "2" x2="21" y2="11" />
+              <line x1="18" y1= "8" x2="18" y2= "0" style={{ strokeWidth: "3px" }} />
+            </svg>
+          </div>
+        </Link>
       </div>
       </>
     );
