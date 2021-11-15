@@ -30,7 +30,7 @@ export default class Layout extends React.Component {
           </div>
         </div>
         <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => {this.setState( { sideBarHidden: !this.state.sideBarHidden } )}}>
-          <svg width="24" height="24">
+          <svg width="24" height="24" className={this.state.sideBarHidden ? "" : styles.sideBarNormal}>
             <line x1="0" y1="6" x2="24" y2="6" />
             <line x1="0" y1="18" x2="24" y2="18" />
           </svg>
