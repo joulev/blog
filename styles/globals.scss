@@ -16,4 +16,8 @@ body {
 
 a {
   text-decoration: none;
+  transition: .15s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
 }
