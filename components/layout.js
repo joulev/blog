@@ -10,7 +10,22 @@ export default class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sideBarHidden: true
+      sideBarHidden: true,
+      downEnough: false
+    }
+  }
+  componentDidMount() {
+    window.addEventListener("scroll", this.onScroll)
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll)
+  }
+  onScroll = () => {
+    const scrollTop = window.scrollY;
+    if (this.state.downEnough) {
+      if (scrollTop < 100) this.setState({ downEnough: false });
+    } else {
+      if (scrollTop >= 100) this.setState({ downEnough: true });
     }
   }
   changeSideBarState = () => {
@@ -42,7 +57,9 @@ export default class Layout extends React.Component {
               data={this.props.data} />
           </div>
         </div>
-        <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
+        <div className={
+          `${styles.topBtns} ${this.state.downEnough ? styles.downEnough : styles.notDownEnough}
+           ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
           <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
             classNames={{
               enter:        styles.toggleEnter,
@@ -58,7 +75,9 @@ export default class Layout extends React.Component {
           </CSSTransition>
         </div>
         <Link href="/">
-          <div className={`${styles.topBtns} ${styles.homeBtn}`}>
+          <div className={
+            `${styles.topBtns} ${this.state.downEnough ? styles.downEnough : styles.notDownEnough}
+             ${styles.homeBtn}`}>
             <svg width="24" height="24">
               <line x1= "6" y1="20" x2="18" y2="20" />
               <line x1= "6" y1="20" x2= "6" y2= "8" />
