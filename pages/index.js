@@ -14,9 +14,9 @@ export function getStaticProps() {
   }
 }
 
-export default function Home({ posts }) {
+export default function Home({ dark, posts }) {
   return (
-    <Layout title="Home" postPage={false} data={{}}>
+    <Layout dark={dark} title="Home" postPage={false} data={{}}>
       <h1>Posts</h1>
       {posts.map(post => (
         <div className="card mb-3" key={post.name}>
@@ -28,7 +28,7 @@ export default function Home({ posts }) {
               <Date time={post.time} />
             </h6>
             <p className="card-text">{truncatePlainContent(post.plain)}</p>
-            <TagList tags={post.tag} />
+            <TagList dark={dark} tags={post.tag} />
           </div>
         </div>
       ))}

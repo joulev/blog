@@ -31,6 +31,15 @@ export default class Layout extends React.Component {
   changeSideBarState = () => {
     this.setState({ sideBarHidden: !this.state.sideBarHidden });
   }
+  naviBtns = (checkDark, additionalDark, additionalLight) => {
+    return checkDark
+    ? `${styles.topBtnsDark}
+       ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnoughDark : styles.notDownEnoughDark}
+       ${additionalDark}`
+    : `${styles.topBtnsLight}
+       ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnoughLight : styles.notDownEnoughLight}
+       ${additionalLight}`;
+  }
   render() {
     return (
       <>
@@ -40,34 +49,44 @@ export default class Layout extends React.Component {
       <div className="container">
         <div className="row">
           <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
-            classNames={{
-              enter:        styles.leftPanelEnter,
-              enterActive:  styles.leftPanelEnterActive,
-              enterDone:    styles.leftPanelEnterDone,
-              exit:         styles.leftPanelExit,
-              exitActive:   styles.leftPanelExitActive
+            classNames={this.props.dark ? {
+              enter:        styles.leftPanelEnterDark,
+              enterActive:  styles.leftPanelEnterActiveDark,
+              enterDone:    styles.leftPanelEnterDoneDark,
+              exit:         styles.leftPanelExitDark,
+              exitActive:   styles.leftPanelExitActiveDark
+            } : {
+              enter:        styles.leftPanelEnterLight,
+              enterActive:  styles.leftPanelEnterActiveLight,
+              enterDone:    styles.leftPanelEnterDoneLight,
+              exit:         styles.leftPanelExitLight,
+              exitActive:   styles.leftPanelExitActiveLight
             }}>
-            <div className={`col-md-4 ${styles.leftPanel}`}>
-              <LeftPanel />
+            <div className={`col-md-4 ${this.props.dark ? styles.leftPanelDark : styles.leftPanelLight}`}>
+              <LeftPanel dark={this.props.dark} />
             </div>
           </CSSTransition>
           <div className="col-md-8">
-            <Content postPage={this.props.postPage}
+            <Content dark={this.props.dark} postPage={this.props.postPage}
               content={this.props.postPage ? this.props.content : this.props.children}
               data={this.props.data} />
           </div>
         </div>
-        <div className={
-          `${styles.topBtns}
-           ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
-           ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
+        <div className={this.naviBtns(this.props.dark, styles.toggleDark, styles.toggleLight)}
+          onClick={() => this.changeSideBarState()}>
           <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
-            classNames={{
-              enter:        styles.toggleEnter,
-              enterActive:  styles.toggleEnterActive,
-              enterDone:    styles.toggleEnterDone,
-              exit:         styles.toggleExit,
-              exitActive:   styles.toggleExitActive
+            classNames={this.props.dark ? {
+              enter:        styles.toggleEnterDark,
+              enterActive:  styles.toggleEnterActiveDark,
+              enterDone:    styles.toggleEnterDoneDark,
+              exit:         styles.toggleExitDark,
+              exitActive:   styles.toggleExitActiveDark
+            } : {
+              enter:        styles.toggleEnterLight,
+              enterActive:  styles.toggleEnterActiveLight,
+              enterDone:    styles.toggleEnterDoneLight,
+              exit:         styles.toggleExitLight,
+              exitActive:   styles.toggleExitActiveLight
             }}>
             <svg width="24" height="24">
               <line x1="0" y1="6" x2="24" y2="6" />
@@ -76,10 +95,7 @@ export default class Layout extends React.Component {
           </CSSTransition>
         </div>
         <Link href="/" passHref>
-          <div className={
-            `${styles.topBtns}
-              ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
-             ${styles.homeBtn}`}>
+          <div className={this.naviBtns(this.props.dark, styles.homeBtnDark, styles.homeBtnLight)}>
             <svg width="24" height="24">
               <line x1= "6" y1="20" x2="18" y2="20" />
               <line x1= "6" y1="20" x2= "6" y2= "8" />

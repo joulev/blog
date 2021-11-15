@@ -1,38 +1,54 @@
+@use "sass:color";
+@use "sass:map";
 @import "../styles/variables";
 
-.all {
-  position: sticky;
-  top: 0;
-  height: 500px;
-  @media (min-width: 768px) {
-    height: 100vh;
-  }
-  .avatar {
-    border-radius: 50%;
-  }
-  .btnGroup {
-    text-align: center;
-    a {
-      font-size: large;
-      display: block;
-      padding: .5rem 0;
-      text-decoration: none;
-      color: $foreground;
-      transition: color .15s ease-in-out;
-      &:hover {
-        color: $primary;
+@mixin manage-theme($name, $theme-map) {
+  $background: map.get($theme-map, "background");
+  $foreground: map.get($theme-map, "foreground");
+  $primary: map.get($theme-map, "primary");
+  $gray: map.get($theme-map, "gray");
+  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  $light: $background;
+  $dark: $foreground;
+  $text-muted: $gray;
+  .all#{$name} {
+    position: sticky;
+    top: 0;
+    height: 500px;
+    @media (min-width: 768px) {
+      height: 100vh;
+    }
+    .avatar#{$name} {
+      border-radius: 50%;
+    }
+    .btnGroup#{$name} {
+      text-align: center;
+      a {
+        font-size: large;
+        display: block;
+        padding: .5rem 0;
+        text-decoration: none !important;
+        color: $foreground;
+        transition: color .15s ease-in-out;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    .footer#{$name} {
+      position: absolute;
+      bottom: 0;
+      padding: 1rem 0;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      > div:last-of-type {
+        margin-left: auto;
       }
     }
   }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    padding: 1rem 0;
-    display: flex;
-    align-items: flex-end;
-    width: 100%;
-    > div:last-of-type {
-      margin-left: auto;
-    }
-  }
 }
+
+
+@include manage-theme(Light, $light-theme);
+@include manage-theme(Dark, $dark-theme);

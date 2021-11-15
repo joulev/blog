@@ -1,15 +1,13 @@
-//$background: white;
-//$foreground: #222;
-//$primary: #27AE60;
-//$gray: #777;
+$light-theme: (
+  "background": white,
+  "foreground": #222,
+  "primary": #27AE60,
+  "gray": #777
+);
 
-$background: #222;
-$foreground: white;
-$primary: #2ECC71;
-$gray: #888;
-
-$box-shadow: 0 .5rem 1rem rgba($foreground, .15);
-
-$light: $background;
-$dark: $foreground;
-$text-muted: $gray;
+$dark-theme: (
+  "background": #222,
+  "foreground": white,
+  "primary": #2ECC71,
+  "gray": #888
+);

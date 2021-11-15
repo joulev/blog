@@ -27,8 +27,8 @@ export function getStaticProps({ params }) {
   }
 }
 
-export default function Post({post}) {
+export default function Post({ post, dark }) {
   return (
-    <Layout title={post.data.title} postPage={true} content={post.content} data={post.data} />
+    <Layout dark={dark} title={post.data.title} postPage={true} content={post.content} data={post.data} />
   )
 }

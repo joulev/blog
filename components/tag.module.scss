@@ -1,15 +1,29 @@
 @use "sass:color";
+@use "sass:map";
 @import "../styles/variables";
 
-.tag {
-  padding: .15rem .4rem;
-  color: $primary;
-  background: mix($primary, $background, 20%);
-  border-radius: 5px;
-  transition: .15s ease-in-out;
-  &:hover {
-    background: $primary;
-    color: white;//$background
-    text-decoration: none;
+@mixin manage-theme($name, $theme-map) {
+  $background: map.get($theme-map, "background");
+  $foreground: map.get($theme-map, "foreground");
+  $primary: map.get($theme-map, "primary");
+  $gray: map.get($theme-map, "gray");
+  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  $light: $background;
+  $dark: $foreground;
+  $text-muted: $gray;
+  .tag#{$name} {
+    padding: .15rem .4rem;
+    color: $primary;
+    background: mix($primary, $background, 20%);
+    border-radius: 5px;
+    transition: .15s ease-in-out;
+    &:hover {
+      background: $primary;
+      color: white !important;
+      text-decoration: none !important;
+    }
   }
 }
+
+@include manage-theme(Light, $light-theme);
+@include manage-theme(Dark, $dark-theme);

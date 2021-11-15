@@ -1,35 +1,65 @@
+@use "sass:map";
 @use "sass:color";
 @import "./variables";
 @import "~bootstrap/scss/bootstrap";
 
-* {
-  box-sizing: border-box;
-}
-
 html, body {
   margin: 0;
   padding: 0;
-  background: $background;
-  color: $foreground;
 }
-
-// always show scrollbar
 body {
   overflow-y: scroll;
 }
-
-a {
-  text-decoration: none;
-  transition: .15s ease-in-out;
-  color: $primary;
-  &:hover {
-    color: mix($primary, $foreground, $weight: 60%);
-    text-decoration: underline;
+body.light {
+  $background: map.get($light-theme, "background");
+  $foreground: map.get($light-theme, "foreground");
+  $primary: map.get($light-theme, "primary");
+  $gray: map.get($light-theme, "gray");
+  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  $light: $background;
+  $dark: $foreground;
+  $text-muted: $gray;
+  background-color: $light;
+  color: $dark;
+  a {
+    text-decoration: none;
+    transition: .15s ease-in-out;
+    color: $primary;
+    &:hover {
+      color: mix($primary, $dark, $weight: 60%);
+      text-decoration: underline;
+    }
+  }
+  .card {
+    background: $light;
+    color: $dark;
+    border-color: mix($text-muted, $light, $weight: 40%);
   }
 }
 
-.card {
-  background: $background;
-  color: $foreground;
-  border-color: mix($gray, $background, $weight: 40%);
+body.dark {
+  $background: map.get($dark-theme, "background");
+  $foreground: map.get($dark-theme, "foreground");
+  $primary: map.get($dark-theme, "primary");
+  $gray: map.get($dark-theme, "gray");
+  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  $light: $background;
+  $dark: $foreground;
+  $text-muted: $gray;
+  background-color: $light;
+  color: $dark;
+  a {
+    text-decoration: none;
+    transition: .15s ease-in-out;
+    color: $primary;
+    &:hover {
+      color: mix($primary, $dark, $weight: 60%);
+      text-decoration: underline;
+    }
+  }
+  .card {
+    background: $light;
+    color: $dark;
+    border-color: mix($text-muted, $light, $weight: 40%);
+  }
 }
