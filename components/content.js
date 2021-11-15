@@ -1,5 +1,5 @@
 import Date from "./date";
-import Tag from "./tag";
+import TagList from "./tagList";
 import styles from "./content.module.scss";
 
 export default function Content(props) {
@@ -9,9 +9,7 @@ export default function Content(props) {
         <h1>{props.data.title}</h1>
         <div className={styles.metadata}>
           <div className={`${styles.date} fs-5 text-muted`}><Date time={props.data.time} /></div>
-          <div className={styles.tagList}>
-            {props.data.tag.split(" ").map(tag => <Tag tagName={tag} key={tag} />)}
-          </div>
+          <TagList tags={props.data.tag} />
         </div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: props.content }} />
