@@ -8,6 +8,7 @@
   border: 1px solid $gray-300;
   border-radius: 5px;
   background: $gray-100;
+  transition: .15s ease-in-out;
   display: none;
   @media (max-width: 767.98px) {
     display: block;
@@ -16,6 +17,9 @@
     stroke: $gray-800;
     stroke-width: 2px;
     stroke-linecap: round;
+  }
+  &:hover {
+    border-color: $text-muted;
   }
 }
 
@@ -36,5 +40,26 @@
   }
   line:last-of-type {
     transform: translate(12px, 12px) rotate(-45deg) translate(-12px, -18px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .leftPanel {
+    overflow: hidden;
+    height: 0;
+  }
+  .leftPanelEnter {
+    height: 0;
+  }
+  .leftPanelEnterActive {
+    height: 500px;
+    transition: .3s ease-in-out;
+  }
+  .leftPanelExit {
+    height: 500px;
+  }
+  .leftPanelExitActive {
+    height: 0;
+    transition: .3s ease-in-out;
   }
 }

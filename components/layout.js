@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
+import { CSSTransition } from "react-transition-group";
 import LeftPanel from "./leftPanel";
 import Content from "./content";
 import styles from "./layout.module.scss";
@@ -12,6 +13,9 @@ export default class Layout extends React.Component {
       sideBarHidden: true
     }
   }
+  changeSideBarState = () => {
+    this.setState({ sideBarHidden: !this.state.sideBarHidden });
+  }
   render() {
     return (
       <>
@@ -20,16 +24,24 @@ export default class Layout extends React.Component {
       </Head>
       <div className="container">
         <div className="row">
-          <div className={`col-md-4 ${this.state.sideBarHidden ? "d-none" : "d-block"} d-md-block`}>
-            <LeftPanel />
-          </div>
+          <CSSTransition in={!this.state.sideBarHidden} timeout={10000}
+            classNames={{
+              enter: styles.leftPanelEnter,
+              enterActive: styles.leftPanelEnterActive,
+              exit: styles.leftPanelExit,
+              exitActive: styles.leftPanelExitActive
+            }}>
+            <div className={`col-md-4 ${styles.leftPanel}`}>
+              <LeftPanel />
+            </div>
+          </CSSTransition>
           <div className="col-md-8">
             <Content postPage={this.props.postPage}
               content={this.props.postPage ? this.props.content : this.props.children}
               data={this.props.data} />
           </div>
         </div>
-        <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => {this.setState( { sideBarHidden: !this.state.sideBarHidden } )}}>
+        <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
           <svg width="24" height="24" className={this.state.sideBarHidden ? "" : styles.sideBarNormal}>
             <line x1="0" y1="6" x2="24" y2="6" />
             <line x1="0" y1="18" x2="24" y2="18" />
