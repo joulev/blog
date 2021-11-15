@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+.toggle {
+  display: none;
+  @media (max-width: 767.98px) {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    padding: 7px;
+    border: 1px solid $gray-300;
+    border-radius: 5px;
+    background: $gray-100;
+  }
+  > svg > line {
+    stroke: $gray-800;
+    stroke-width: 2px;
+  }
+}
