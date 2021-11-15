@@ -23,7 +23,13 @@ a {
   transition: .15s ease-in-out;
   color: $primary;
   &:hover {
-    color: color.scale($primary, $blackness: 40%);
+    color: mix($primary, $foreground, $weight: 60%);
     text-decoration: underline;
   }
+}
+
+.card {
+  background: $background;
+  color: $foreground;
+  border-color: $gray;
 }
