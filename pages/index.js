@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Layout from "../components/layout";
-import { listPosts } from "../lib/listPosts";
-import { getPostUrlFromProps } from "../lib/utils";
+import { listPosts } from "../lib/getPosts";
+import { getPostUrlFromProps, truncatePlainContent } from "../lib/utils";
 
 export function getStaticProps() {
   const posts = listPosts();
@@ -16,13 +16,15 @@ export default function Home({ posts }) {
   return (
     <Layout title="Home" postPage={false} data={{}}>
       <h1>Posts</h1>
-      <hr />
       {posts.map(post => (
-        <div key={post.id}>
-          <Link href={getPostUrlFromProps(post.time, post.name)}><a>{post.title}</a></Link>
-          <br />
-          {post.time}
-          <hr />
+        <div className="card mb-3" key={post.name}>
+          <div className="card-body">
+            <Link href={getPostUrlFromProps(post.time, post.name)}>
+              <a className="h5 card-title stretched-link">{post.title}</a>
+            </Link>
+            <h6 className="small card-subtitle mt-1 mb-3 text-muted">{post.time}</h6>
+            <p className="card-text">{truncatePlainContent(post.plain)}</p>
+          </div>
         </div>
       ))}
     </Layout>

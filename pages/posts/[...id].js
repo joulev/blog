@@ -1,5 +1,5 @@
 import Layout from "../../components/layout";
-import { listPosts, getPostContent } from "../../lib/listPosts";
+import { listPosts, getPostContent } from "../../lib/getPosts";
 
 export async function getStaticPaths() {
   const posts = listPosts();
@@ -18,8 +18,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
-  const post = await getPostContent(params.id[3]);
+export function getStaticProps({ params }) {
+  const post = getPostContent(params.id[3]);
   return {
     props: {
       post
