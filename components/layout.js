@@ -24,12 +24,13 @@ export default class Layout extends React.Component {
       </Head>
       <div className="container">
         <div className="row">
-          <CSSTransition in={!this.state.sideBarHidden} timeout={10000}
+          <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
             classNames={{
-              enter: styles.leftPanelEnter,
-              enterActive: styles.leftPanelEnterActive,
-              exit: styles.leftPanelExit,
-              exitActive: styles.leftPanelExitActive
+              enter:        styles.leftPanelEnter,
+              enterActive:  styles.leftPanelEnterActive,
+              enterDone:    styles.leftPanelEnterDone,
+              exit:         styles.leftPanelExit,
+              exitActive:   styles.leftPanelExitActive
             }}>
             <div className={`col-md-4 ${styles.leftPanel}`}>
               <LeftPanel />
@@ -42,10 +43,19 @@ export default class Layout extends React.Component {
           </div>
         </div>
         <div className={`${styles.topBtns} ${styles.toggle}`} onClick={() => this.changeSideBarState()}>
-          <svg width="24" height="24" className={this.state.sideBarHidden ? "" : styles.sideBarNormal}>
-            <line x1="0" y1="6" x2="24" y2="6" />
-            <line x1="0" y1="18" x2="24" y2="18" />
-          </svg>
+          <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
+            classNames={{
+              enter:        styles.toggleEnter,
+              enterActive:  styles.toggleEnterActive,
+              enterDone:    styles.toggleEnterDone,
+              exit:         styles.toggleExit,
+              exitActive:   styles.toggleExitActive
+            }}>
+            <svg width="24" height="24">
+              <line x1="0" y1="6" x2="24" y2="6" />
+              <line x1="0" y1="18" x2="24" y2="18" />
+            </svg>
+          </CSSTransition>
         </div>
         <Link href="/">
           <div className={`${styles.topBtns} ${styles.homeBtn}`}>

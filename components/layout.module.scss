@@ -34,32 +34,43 @@
   right: 70px;
 }
 
-.sideBarNormal {
-  line:first-of-type {
-    transform: translate(12px, 12px) rotate(45deg) translate(-12px, -6px);
-  }
-  line:last-of-type {
-    transform: translate(12px, 12px) rotate(-45deg) translate(-12px, -18px);
-  }
-}
-
 @media (max-width: 767.98px) {
   .leftPanel {
     overflow: hidden;
     height: 0;
   }
-  .leftPanelEnter {
-    height: 0;
+  .leftPanelEnter       { height: 0; }
+  .leftPanelEnterActive,
+  .leftPanelEnterDone   { height: 500px; transition: .3s ease-in-out; }
+  .leftPanelExit        { height: 500px; }
+  .leftPanelExitActive  { height: 0; transition: .3s ease-in-out; }
+
+  .toggleEnterActive, .toggleEnterDone {
+    line:first-of-type {
+      transform: translate(12px, 12px) rotate(45deg) translate(-12px, -6px);
+      transition: .3s ease-in-out;
+    }
+    line:last-of-type {
+      transform: translate(12px, 12px) rotate(-45deg) translate(-12px, -18px);
+      transition: .3s ease-in-out;
+    }
   }
-  .leftPanelEnterActive {
-    height: 500px;
-    transition: .3s ease-in-out;
+  .toggleExit {
+    line:first-of-type {
+      transform: translate(12px, 12px) rotate(45deg) translate(-12px, -6px);
+    }
+    line:last-of-type {
+      transform: translate(12px, 12px) rotate(-45deg) translate(-12px, -18px);
+    }
   }
-  .leftPanelExit {
-    height: 500px;
-  }
-  .leftPanelExitActive {
-    height: 0;
-    transition: .3s ease-in-out;
+  .toggleExitActive {
+    line:first-of-type {
+      transform: translateY(0px);
+      transition: .3s ease-in-out;
+    }
+    line:last-of-type {
+      transform: translateY(0px);
+      transition: .3s ease-in-out;
+    }
   }
 }
