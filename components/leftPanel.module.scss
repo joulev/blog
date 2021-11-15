@@ -1,6 +1,4 @@
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
+@import "../styles/variables";
 
 .all {
   position: sticky;
@@ -16,7 +14,7 @@
       display: block;
       padding: .5rem 0;
       text-decoration: none;
-      color: $text-muted;
+      color: $gray;
       transition: color .15s ease-in-out;
       &:hover {
         color: $primary;
