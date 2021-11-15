@@ -5,6 +5,7 @@
 .topBtns {
   cursor: pointer;
   padding: 7px;
+  z-index: 300;
   transition: .15s ease-in-out;
   display: none;
   @media (max-width: 767.98px) {
@@ -43,14 +44,38 @@
 
 @media (max-width: 767.98px) {
   .leftPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: $white;
+    box-shadow: none;
     overflow: hidden;
     height: 0;
   }
-  .leftPanelEnter       { height: 0; }
-  .leftPanelEnterActive,
-  .leftPanelEnterDone   { height: 500px; transition: .3s ease-in-out; }
-  .leftPanelExit        { height: 500px; }
-  .leftPanelExitActive  { height: 0; transition: .3s ease-in-out; }
+  .leftPanelEnter {
+    height: 0;
+    box-shadow: none;
+  }
+  .leftPanelEnterActive {
+    height: 500px;
+    box-shadow: $box-shadow;
+    transition: .3s ease-in-out;
+  }
+  .leftPanelEnterDone {
+    height: 500px;
+    box-shadow: $box-shadow;
+  }
+  .leftPanelExit {
+    height: 500px;
+    box-shadow: $box-shadow;
+  }
+  .leftPanelExitActive {
+    height: 0;
+    box-shadow: none;
+    transition: .3s ease-in-out;
+  }
 
   .toggleEnterActive, .toggleEnterDone {
     line:first-of-type {
