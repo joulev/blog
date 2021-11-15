@@ -4,7 +4,7 @@ import styles from "./content.module.scss";
 
 export default function Content(props) {
   return props.postPage ? (
-    <div className="py-4">
+    <div className={styles.all}>
       <div className={styles.heading}>
         <h1>{props.data.title}</h1>
         <div className={styles.metadata}>
@@ -17,6 +17,6 @@ export default function Content(props) {
       <div dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
   ) : (
-    <div className="py-4">{props.content}</div>
+    <div className={styles.all}>{props.content}</div>
   );
 }
