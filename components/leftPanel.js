@@ -13,7 +13,7 @@ export default function LeftPanel(props) {
       </div>
       <div className={`${styles.btnGroup} ${getThemeClassName(styles, props.dark)}`}>
         <Link href="/"><a>Home</a></Link>
-        <a href="#">About</a>
+        <Link href="/about"><a>About me</a></Link>
         <a href="#">Search</a>
         <a href="#">Categories</a>
       </div>
