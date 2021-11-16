@@ -1,0 +1,34 @@
+@use "sass:color";
+@use "sass:map";
+@import "../styles/variables";
+
+.tag {
+  display: inline-block;
+  padding: .3rem .6rem;
+  border-radius: 5px;
+  margin-bottom: .5rem;
+}
+
+@mixin manage-theme($name, $theme-map) {
+  $background: map.get($theme-map, "background");
+  $foreground: map.get($theme-map, "foreground");
+  $primary: map.get($theme-map, "primary");
+  $gray: map.get($theme-map, "gray");
+  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  $light: $background;
+  $dark: $foreground;
+  $text-muted: $gray;
+  .tag.#{$name} {
+    color: $primary;
+    background: mix($primary, $background, 20%);
+    transition: .15s ease-in-out;
+    &:hover {
+      background: $primary;
+      color: white !important;
+      text-decoration: none !important;
+    }
+  }
+}
+
+@include manage-theme(light, $light-theme);
+@include manage-theme(dark, $dark-theme);
