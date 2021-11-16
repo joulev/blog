@@ -21,10 +21,10 @@ export default function LeftPanel(props) {
         <div className="small text-muted">
           Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.
         </div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="darkModeCheck" checked={props.dark}
+        <div className="form-check form-switch">
+          <input className="form-check-input" type="checkbox" role="switch" id="darkModeCheck" checked={props.dark}
             onChange={() => props.changeMode()} />
-          <label class="form-check-label" for="darkModeCheck">Dark mode</label>
+          <label className="form-check-label" htmlFor="darkModeCheck">Dark mode</label>
         </div>
       </div>
     </div>
