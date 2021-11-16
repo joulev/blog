@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head />
-        <body className={ this.props.dark ? "dark" : "light" }>
+        <body className={ this.props.dark ? "dark" : "light" } bgcolor="#222">
           <Main />
           <NextScript />
         </body>
