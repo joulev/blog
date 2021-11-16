@@ -9,28 +9,30 @@ time: 14/12/2021
 Lorem markdownum decidit! Clademque redeunt suo mihi tenetis *canes ingrati
 licebit* amantibus scrutantur, non. Dabo nube cum ferre uris nimius acerbo.
 
-    window_piracy.printDegaussKey = rtfWpaWhois;
-    ripping = control.sdsl(tweet.ppl_pad_device(42));
-    hardening.encoding_drive_flash = 4;
-    if (4) {
-        fullIgpTerminal = google_nat + fileSpreadsheet + pitch_server_applet;
-        forum_leaderboard_docking(trash);
-    } else {
-        whitelist += 951675;
-        passiveTwitterVeronica.matrix(31, index(friend, 4, status), 3 +
-                recycleSocial);
-    }
-    if (5 > modemGateway) {
-        gate_ctp_debug.kerningDisk *=
-                signature_gbps_grep.reimage_computer_matrix.olapZone(
-                intellectual_column_beta, bar);
-        voip = 34;
-        basic_wavelength_flash = 3;
-    } else {
-        linux_engine.technology(enterprise_keylogger);
-        retina += sector.bcc(navigation_mini_illegal, dongle,
-                down_oop_smartphone);
-    }
+```js
+window_piracy.printDegaussKey = rtfWpaWhois;
+ripping = control.sdsl(tweet.ppl_pad_device(42));
+hardening.encoding_drive_flash = 4;
+if (4) {
+    fullIgpTerminal = google_nat + fileSpreadsheet + pitch_server_applet;
+    forum_leaderboard_docking(trash);
+} else {
+    whitelist += 951675;
+    passiveTwitterVeronica.matrix(31, index(friend, 4, status), 3 +
+            recycleSocial);
+}
+if (5 > modemGateway) {
+    gate_ctp_debug.kerningDisk *=
+            signature_gbps_grep.reimage_computer_matrix.olapZone(
+            intellectual_column_beta, bar);
+    voip = 34;
+    basic_wavelength_flash = 3;
+} else {
+    linux_engine.technology(enterprise_keylogger);
+    retina += sector.bcc(navigation_mini_illegal, dongle,
+            down_oop_smartphone);
+}
+```
 
 ## Vulcanum cinctum lacrimas tamen
 
