@@ -11,13 +11,11 @@ export async function getStaticProps() {
 }
 
 export default function Search(props) {
-  const [query, setQuery] = useState("");
   const [stillTyping, setStillTyping] = useState(false);
   const [currentTimeout, setCurrentTimeout] = useState(null);
   const [postsFiltered, setPostsFiltered] = useState(props.posts);
   const onSearchChange = query => {
     clearTimeout(currentTimeout);
-    setQuery(query);
     setStillTyping(true);
     setPostsFiltered(filterPosts(props.posts, query));
     setCurrentTimeout(setTimeout(() => finishTyping(), 1000));
