@@ -12,10 +12,9 @@ export default function LeftPanel(props) {
         <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-muted">@joulev</a>
       </div>
       <div className={`${styles.btnGroup} ${getThemeClassName(styles, props.dark)}`}>
-        <Link href="/"><a className={props.activeLink === 1 ? styles.active : ""}>Home</a></Link>
-        <Link href="/about"><a className={props.activeLink === 2 ? styles.active : ""}>About me</a></Link>
-        <a href="#" className={props.activeLink === 3 ? styles.active : ""}>Search</a>
-        <a href="#" className={props.activeLink === 4 ? styles.active : ""}>Categories</a>
+        <Link href="/"      ><a className={props.activeLink === 1 ? styles.active : ""}>Home</a></Link>
+        <Link href="/about" ><a className={props.activeLink === 2 ? styles.active : ""}>About me</a></Link>
+        <Link href="/search"><a className={props.activeLink === 3 ? styles.active : ""}>Search</a></Link>
       </div>
       <div className={styles.footer}>
         <div className="small text-muted">

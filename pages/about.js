@@ -1,6 +1,6 @@
 import Layout from "../components/layout";
 
-export default function Home({ dark, changeMode, posts }) {
+export default function About({ dark, changeMode }) {
   return (
     <Layout dark={dark} changeMode={changeMode} title="About me" postPage={false} data={{}}
       activeLink={2}>
