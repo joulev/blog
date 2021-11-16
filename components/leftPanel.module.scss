@@ -32,9 +32,13 @@
     padding: 1rem 0;
     display: flex;
     align-items: flex-end;
+    @media (min-width: 768px) and (max-width: 991.98px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     width: 100%;
-    > div:last-of-type {
-      margin-left: auto;
+    > div:first-of-type {
+      margin-right: auto;
     }
   }
 }

@@ -17,13 +17,13 @@ export default function LeftPanel(props) {
         <div><Link href="/search"><a className={props.activeLink === 3 ? styles.active : ""}>Search</a></Link></div>
       </div>
       <div className={styles.footer}>
-        <div className="small text-muted">
-          Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.
-        </div>
         <div className="form-check form-switch">
           <input className="form-check-input" type="checkbox" role="switch" id="darkModeCheck" checked={props.dark}
             onChange={() => props.changeMode()} />
           <label className="form-check-label" htmlFor="darkModeCheck">Dark mode</label>
+        </div>
+        <div className="small text-muted">
+          Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.
         </div>
       </div>
     </div>
