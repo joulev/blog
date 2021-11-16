@@ -30,6 +30,6 @@ export function getStaticProps({ params }) {
 export default function Post({ dark, changeMode, post }) {
   return (
     <Layout dark={dark} changeMode={changeMode} title={post.data.title} postPage={true}
-      content={post.content} data={post.data} />
+      content={post.content} data={post.data} activeLink={0} />
   )
 }

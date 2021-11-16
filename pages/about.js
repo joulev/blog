@@ -2,7 +2,8 @@ import Layout from "../components/layout";
 
 export default function Home({ dark, changeMode, posts }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} title="About me" postPage={false} data={{}}>
+    <Layout dark={dark} changeMode={changeMode} title="About me" postPage={false} data={{}}
+      activeLink={2}>
       <h1>About me</h1>
       <p>Hello. I am Dung. A Computer Engineering student in the National University of Singapore.</p>
       <p>

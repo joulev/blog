@@ -19,6 +19,9 @@
       display: block;
       padding: .5rem 0;
       text-decoration: none !important;
+      &.active {
+        font-weight: bold;
+      }
     }
   }
   .footer {

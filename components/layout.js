@@ -56,7 +56,7 @@ export default class Layout extends React.Component {
             }} onExit={() => this.setState({ justChangedTheme: false })}>
             <div className={`col-md-4 ${styles.leftPanel} ${getThemeClassName(styles, this.props.dark)}
               ${this.state.justChangedTheme ? styles.leftPanelEnterDone : ""}`}>
-              <LeftPanel dark={this.props.dark} changeMode={this.changeMode} />
+              <LeftPanel dark={this.props.dark} changeMode={this.changeMode} activeLink={this.props.activeLink} />
             </div>
           </CSSTransition>
           <div className="col-md-8">
