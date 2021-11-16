@@ -34,7 +34,8 @@ export default class Layout extends React.Component {
     this.setState({ sideBarHidden: !this.state.sideBarHidden });
   }
   changeMode = () => {
-    this.setState({ justChangedTheme: true });
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    this.setState({ justChangedTheme: screenWidth < 768 });
     this.props.changeMode();
   }
   render() {
