@@ -1,38 +1,36 @@
-import { Component, useState } from "react";
+import { useState } from "react";
+import ArticleCard from "../components/articleCard";
 import Layout from "../components/layout";
 import SearchBox from "../components/searchBox";
 import { listPosts } from "../lib/getPosts";
-import { parseSearchQuery } from "../lib/search";
+import { filterPosts } from "../lib/search";
 
 export async function getStaticProps() {
   const posts = listPosts();
   return { props: { posts } };
 }
 
-function printParsedQuery(query) {
-  const parsed = parseSearchQuery(query);
-  let str = "tags: [";
-  parsed.tags.map(tag => str += `"${tag}", `);
-  str += "]\nwords: [";
-  parsed.words.map(word => str += `"${word}", `);
-  str += "]";
-  return str;
-}
-
 export default function Search(props) {
   const [query, setQuery] = useState("");
   const [stillTyping, setStillTyping] = useState(false);
   const [currentTimeout, setCurrentTimeout] = useState(null);
+  const [postsFiltered, setPostsFiltered] = useState(props.posts);
   const onSearchChange = query => {
     clearTimeout(currentTimeout);
     setQuery(query);
     setStillTyping(true);
-    setCurrentTimeout(setTimeout(() => setStillTyping(false), 1000));
+    setPostsFiltered(filterPosts(props.posts, query));
+    setCurrentTimeout(setTimeout(() => finishTyping(), 1000));
+  }
+  const finishTyping = () => {
+    setStillTyping(false);
   }
   return <Layout dark={props.dark} changeMode={props.changeMode} title="Search"
     postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => onSearchChange(q)} />
-    <p>{query}</p>
-    <p>{stillTyping ? "still typing" : printParsedQuery(query)}</p>
+    {stillTyping ? <p>still typing</p> : postsFiltered.map(post => (
+      <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
+        time={post.time} plain={post.plain} tag={post.tag} />
+    ))}
   </Layout>;
 }
