@@ -13,14 +13,16 @@
     border-radius: 50%;
   }
   .btnGroup {
-    text-align: center;
-    a {
-      font-size: large;
+    div {
       display: block;
+      text-align: center;
       padding: .5rem 0;
-      text-decoration: none !important;
-      &.active {
-        font-weight: bold;
+      a {
+        font-size: large;
+        text-decoration: none !important;
+        &.active {
+          font-weight: bold;
+        }
       }
     }
   }
