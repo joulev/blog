@@ -16,7 +16,9 @@ export default function Search(props) {
   const router = useRouter();
   // for some reasons router doesnt work well, so I have to implement it myself
   const getQuery = () => {
-    const paramArr = window.location.href.split("?")[1].split("&");
+    const urlArr = window.location.href.split("?");
+    if (urlArr.length === 1) return "";
+    const paramArr = urlArr[1].split("&");
     for (let i = 0; i < paramArr.length; i++) {
       if (paramArr[i].split("=")[0] === "q")
         return decodeURIComponent(paramArr[i].split("=")[1]);
