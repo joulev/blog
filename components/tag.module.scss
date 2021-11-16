@@ -2,6 +2,11 @@
 @use "sass:map";
 @import "../styles/variables";
 
+.tag {
+  padding: .15rem .4rem;
+  border-radius: 5px;
+}
+
 @mixin manage-theme($name, $theme-map) {
   $background: map.get($theme-map, "background");
   $foreground: map.get($theme-map, "foreground");
@@ -11,11 +16,9 @@
   $light: $background;
   $dark: $foreground;
   $text-muted: $gray;
-  .tag#{$name} {
-    padding: .15rem .4rem;
+  .tag.#{$name} {
     color: $primary;
     background: mix($primary, $background, 20%);
-    border-radius: 5px;
     transition: .15s ease-in-out;
     &:hover {
       background: $primary;
@@ -25,5 +28,5 @@
   }
 }
 
-@include manage-theme(Light, $light-theme);
-@include manage-theme(Dark, $dark-theme);
+@include manage-theme(light, $light-theme);
+@include manage-theme(dark, $dark-theme);

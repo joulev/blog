@@ -5,12 +5,14 @@ import { CSSTransition } from "react-transition-group";
 import LeftPanel from "./leftPanel";
 import Content from "./content";
 import styles from "./layout.module.scss";
+import { getThemeClassName } from "../lib/utils";
 
 export default class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       sideBarHidden: true,
+      justChangedTheme: false,
       downEnough: false
     }
   }
@@ -31,14 +33,9 @@ export default class Layout extends React.Component {
   changeSideBarState = () => {
     this.setState({ sideBarHidden: !this.state.sideBarHidden });
   }
-  naviBtns = (checkDark, additionalDark, additionalLight) => {
-    return checkDark
-    ? `${styles.topBtnsDark}
-       ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnoughDark : styles.notDownEnoughDark}
-       ${additionalDark}`
-    : `${styles.topBtnsLight}
-       ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnoughLight : styles.notDownEnoughLight}
-       ${additionalLight}`;
+  changeMode = () => {
+    this.setState({ justChangedTheme: true });
+    this.props.changeMode();
   }
   render() {
     return (
@@ -48,22 +45,17 @@ export default class Layout extends React.Component {
       </Head>
       <div className="container">
         <div className="row">
-          <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
-            classNames={this.props.dark ? {
-              enter:        styles.leftPanelEnterDark,
-              enterActive:  styles.leftPanelEnterActiveDark,
-              enterDone:    styles.leftPanelEnterDoneDark,
-              exit:         styles.leftPanelExitDark,
-              exitActive:   styles.leftPanelExitActiveDark
-            } : {
-              enter:        styles.leftPanelEnterLight,
-              enterActive:  styles.leftPanelEnterActiveLight,
-              enterDone:    styles.leftPanelEnterDoneLight,
-              exit:         styles.leftPanelExitLight,
-              exitActive:   styles.leftPanelExitActiveLight
-            }}>
-            <div className={`col-md-4 ${this.props.dark ? styles.leftPanelDark : styles.leftPanelLight}`}>
-              <LeftPanel dark={this.props.dark} changeMode={this.props.changeMode} />
+          <CSSTransition in={!this.state.sideBarHidden} timeout={600}
+            classNames={{
+              enter:        styles.leftPanelEnter,
+              enterActive:  styles.leftPanelEnterActive,
+              enterDone:    styles.leftPanelEnterDone,
+              exit:         styles.leftPanelExit,
+              exitActive:   styles.leftPanelExitActive
+            }} onExit={() => this.setState({ justChangedTheme: false })}>
+            <div className={`col-md-4 ${styles.leftPanel} ${getThemeClassName(styles, this.props.dark)}
+              ${this.state.justChangedTheme ? styles.leftPanelEnterDone : ""}`}>
+              <LeftPanel dark={this.props.dark} changeMode={this.changeMode} />
             </div>
           </CSSTransition>
           <div className="col-md-8">
@@ -72,21 +64,16 @@ export default class Layout extends React.Component {
               data={this.props.data} />
           </div>
         </div>
-        <div className={this.naviBtns(this.props.dark, styles.toggleDark, styles.toggleLight)}
-          onClick={() => this.changeSideBarState()}>
-          <CSSTransition in={!this.state.sideBarHidden} timeout={1000}
-            classNames={this.props.dark ? {
-              enter:        styles.toggleEnterDark,
-              enterActive:  styles.toggleEnterActiveDark,
-              enterDone:    styles.toggleEnterDoneDark,
-              exit:         styles.toggleExitDark,
-              exitActive:   styles.toggleExitActiveDark
-            } : {
-              enter:        styles.toggleEnterLight,
-              enterActive:  styles.toggleEnterActiveLight,
-              enterDone:    styles.toggleEnterDoneLight,
-              exit:         styles.toggleExitLight,
-              exitActive:   styles.toggleExitActiveLight
+        <div className={`${styles.topBtns}
+          ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
+          ${styles.toggle} ${getThemeClassName(styles, this.props.dark)}`} onClick={() => this.changeSideBarState()}>
+          <CSSTransition in={!this.state.sideBarHidden} timeout={600}
+            classNames={{
+              enter:        styles.toggleEnter,
+              enterActive:  styles.toggleEnterActive,
+              enterDone:    styles.toggleEnterDone,
+              exit:         styles.toggleExit,
+              exitActive:   styles.toggleExitActive
             }}>
             <svg width="24" height="24">
               <line x1="0" y1="6" x2="24" y2="6" />
@@ -95,7 +82,9 @@ export default class Layout extends React.Component {
           </CSSTransition>
         </div>
         <Link href="/" passHref>
-          <div className={this.naviBtns(this.props.dark, styles.homeBtnDark, styles.homeBtnLight)}>
+          <div className={`${styles.topBtns}
+            ${this.state.downEnough && this.state.sideBarHidden ? styles.downEnough : styles.notDownEnough}
+            ${styles.homeBtn} ${getThemeClassName(styles, this.props.dark)}`}>
             <svg width="24" height="24">
               <line x1= "6" y1="20" x2="18" y2="20" />
               <line x1= "6" y1="20" x2= "6" y2= "8" />
