@@ -147,12 +147,12 @@ to worry about theme clashes as they are separated by two class names that are
 guaranteed to never be called together.
 
 It doesn't work perfectly, though. Right now, if you use a phone, try changing
-the theme from the navigation bar, the close the bar. You will see that the bar
-disappears immediately instead of in a smooth transition effect. That's because
+the theme from the navigation bar, then close the bar. You will see that the bar
+disappears immediately instead of transforming in a smooth transition effect. That's because
 changing the theme has effect on class names, which is precisely the thing I
 use in `CSSTransition`. I spent quite a while but couldn't find a good solution.
 Since the transition only takes 0.3 seconds, I think I'll just call it
-"Good enough" for now.
+"good enough" for now.
 
 ## Searching page
 
