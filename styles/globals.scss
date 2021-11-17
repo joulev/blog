@@ -2,7 +2,7 @@
 @use "sass:color";
 @import "./variables";
 $primary: map.get($dark-theme, "primary");
-@import "~prism-themes/themes/prism-one-dark.css";
+@import "./prism-one-monokai.css";
 @import "~bootstrap/scss/bootstrap";
 
 html, body {
