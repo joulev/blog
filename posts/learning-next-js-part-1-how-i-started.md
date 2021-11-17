@@ -126,4 +126,4 @@ Shouldn't copy and paste anything from now onwards.
 
 *To be continued with Part 2.*
 
-<Link href="/"><a>Back to home</a></Link> (just a test)
+[Back to home](/) (just a test)
