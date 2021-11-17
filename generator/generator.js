@@ -7,6 +7,9 @@ if (typeof window !== "undefined") {
   process.exit(1);
 }
 
+// post.md should have a frontmatter as a normal post, where title and tag
+// properties are expected.
+
 const fs = require("fs");
 const matter = require("gray-matter");
 const moment = require("moment");

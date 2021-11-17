@@ -36,3 +36,6 @@ yarn-error.log*
 # vscode customisation (will track when it becomes necessary, but for now it
 # only has some editor customisation
 .vscode
+
+# generator md file
+generator/post.md
