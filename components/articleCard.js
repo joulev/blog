@@ -7,7 +7,7 @@ export default function ArticleCard({ dark, name, title, time, plain, tag }) {
   return (
     <div className="card mb-3">
       <div className="card-body">
-        <Link href={getPostUrlFromProps(time, name)}>
+        <Link href={`/posts/${name}`}>
           <a className="h5 card-title">{title}</a>
         </Link>
         <h6 className="small card-subtitle mt-1 mb-3 text-muted">

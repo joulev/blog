@@ -1,14 +1,12 @@
-import moment from "moment";
 import Layout from "../../components/layout";
 import { listPosts, getPostContent } from "../../lib/getPosts";
 
 export async function getStaticPaths() {
   const posts = listPosts();
   const routerArr = posts.map(post => {
-    const time = moment(post.time);
     return {
       params: {
-        id: [time.format("y"), time.format("M"), time.format("D"), post.name],
+        id: post.name,
       }
     }
   });
@@ -19,7 +17,7 @@ export async function getStaticPaths() {
 }
 
 export function getStaticProps({ params }) {
-  const post = getPostContent(params.id[3]);
+  const post = getPostContent(params.id);
   return {
     props: {
       post
