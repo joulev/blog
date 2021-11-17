@@ -121,9 +121,3 @@ And to build the blog app, which is the same web app you are seeing right now,
 I had to go around the tutorial again several time.
 
 Shouldn't copy and paste anything from now onwards.
-
----
-
-*To be continued with Part 2.*
-
-[Back to home](/) (just a test)
