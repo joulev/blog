@@ -10,12 +10,10 @@ export default class Content extends Component {
   }
   render = () => this.props.postPage ? (
     <div className={styles.all}>
-      <div className={styles.heading}>
+      <div className="pb-4">
         <h1>{this.props.data.title}</h1>
-        <div className={styles.metadata}>
-          <div className={`${styles.date} fs-5 text-muted`}><Date time={this.props.data.time} /></div>
-          <TagList dark={this.props.dark} tags={this.props.data.tag} />
-        </div>
+        <div className="mt-3 fs-5 text-muted"><Date time={this.props.data.time} /></div>
+        <div className="mt-2"><TagList dark={this.props.dark} tags={this.props.data.tag} /></div>
       </div>
       <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
     </div>
