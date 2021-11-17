@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import SearchBox from "../components/searchBox";
 import SearchPlaceholder from "../components/searchingPlaceholder";
 import { listPosts } from "../lib/getPosts";
-import { filterPosts } from "../lib/search";
+import { filterPosts, parseSearchQuery } from "../lib/search";
 
 export async function getStaticProps() {
   const posts = listPosts();
@@ -49,7 +49,9 @@ export default function Search(props) {
     postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => updateQuery(q)} initial={query} />
     {(() => {
-      if (query === "") return <SearchPlaceholder dark={props.dark} type="guide" />;
+      const parsedQuery = parseSearchQuery(query);
+      if (parsedQuery.tags.length === 0 && parsedQuery.words.length === 0)
+        return <SearchPlaceholder dark={props.dark} type="guide" />;
       if (stillTyping) return <SearchPlaceholder dark={props.dark} type="searching" />;
       if (postsFiltered.length === 0)
         return (
