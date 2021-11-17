@@ -18,7 +18,7 @@ const dstDir = path.join(process.cwd(), "posts");
 const srcContent = fs.readFileSync(srcFile, "utf8");
 const matterRes = matter(srcContent);
 const frontMatter = {
-  date: moment().format("DD/MM/YYYY"),
+  date: moment().toISOString(true),
   ...matterRes.data
 }
 
@@ -28,7 +28,7 @@ const dstFile = path.join(dstDir, dstFileName);
 const output = `---
 title: "${frontMatter.title}"
 tag: ${frontMatter.tag}
-time: ${frontMatter.date}
+time: "${frontMatter.date}"
 ---
 ${matterRes.content}`;
 
