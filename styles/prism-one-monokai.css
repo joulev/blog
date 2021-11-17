@@ -28,6 +28,7 @@ code[class*="language-"] {
   -ms-hyphens: none;
   hyphens: none;
 }
+/** @joulev: I remove this part for the selection to look better (in my opinion)
 pre[class*="language-"]::selection,
 code[class*="language-"]::selection,
 pre[class*="language-"]::mozselection,
@@ -35,6 +36,7 @@ code[class*="language-"]::mozselection {
   text-shadow: none;
   background: #bbbbbb;
 }
+*/
 @media print {
   pre[class*="language-"],
   code[class*="language-"] {
