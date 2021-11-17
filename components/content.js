@@ -1,4 +1,6 @@
 import { Component } from "react";
+import JsxParser from "react-jsx-parser";
+import Link from "next/link";
 import Date from "./date";
 import TagList from "./tagList";
 import Prism from "prismjs";
@@ -15,7 +17,7 @@ export default class Content extends Component {
         <div className="mt-3 fs-5 text-muted"><Date time={this.props.data.time} /></div>
         <div className="mt-2"><TagList dark={this.props.dark} tags={this.props.data.tag} /></div>
       </div>
-      <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
+      <JsxParser autoCloseVoidElements components={{ Link }} jsx={this.props.content} />
     </div>
   ) : (
     <div className={styles.all}>{this.props.content}</div>

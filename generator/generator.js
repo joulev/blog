@@ -25,7 +25,7 @@ const frontMatter = {
   ...matterRes.data
 }
 
-const dstFileName = `${matterRes.data.title.toLowerCase().replace(/\W/g, "-")}.md`;
+const dstFileName = `${matterRes.data.title.toLowerCase().replace(/\W+/g, "-")}.md`;
 const dstFile = path.join(dstDir, dstFileName);
 
 const output = `---
