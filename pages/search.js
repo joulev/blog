@@ -31,23 +31,20 @@ export default function Search(props) {
   const [postsFiltered, setPostsFiltered] = useState([]);
   useEffect(() => {
     const q = getQuery();
-    console.log(q);
     setQuery(q);
     setPostsFiltered(filterPosts(props.posts, q));
     setStillTyping(false);
-  }, []);
+  }, [props.posts]);
   const updateQuery = query => {
     setQuery(query);
     router.push(query === "" ? "/search" : `/search?q=${encodeURIComponent(query)}`, undefined, { shallow: true });
-  };
-  useEffect(() => {
     clearTimeout(currentTimeout);
     setStillTyping(true);
     setCurrentTimeout(setTimeout(() => {
       setStillTyping(false);
       setPostsFiltered(filterPosts(props.posts, query));
     }, 500));
-  }, [query]);
+  };
   return <Layout dark={props.dark} changeMode={props.changeMode} title="Search"
     postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => updateQuery(q)} initial={query} />
