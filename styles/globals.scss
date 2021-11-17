@@ -12,6 +12,11 @@ html, body {
 body {
   overflow-y: scroll;
 }
+
+pre, code {
+  font-family: $font-family-code !important;
+}
+
 body.light {
   $background: map.get($light-theme, "background");
   $foreground: map.get($light-theme, "foreground");
