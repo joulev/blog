@@ -1,7 +1,7 @@
 ---
 title: Rapta sed multae properent vivitur fiducia
 tag: nus cs1010
-time: 14/11/2021
+time: "2021-11-17T15:30:05.204+08:00"
 ---
 
 ## Iam fuit pectore
