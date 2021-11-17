@@ -45,7 +45,7 @@ necessary to make a new `class` which `extends React.Component`. In the new
 React and Next.js, however, we don't need to deal with classes, as now we have
 React hooks: `useState` and friends. Compare this
 
-```js
+```jsx
 export default class MyComponent extends Component {
   constructor(props) {
     super(props);
@@ -61,7 +61,7 @@ export default class MyComponent extends Component {
 
 and this
 
-```js
+```jsx
 export default function MyComponent(props) {
   const [myProp, setMyProp] = useState("initial value");
   return <><div>{props.parentProp}</div><div>{myProp}</div></>;
@@ -136,7 +136,7 @@ It turned out to be quite easy. I didn't have to do any dynamic importing, which
 saved me from `async`/`await` hell. The code also became relatively simple: I
 only needed to add the necessary class to the element,
 
-```js
+```jsx
 <MyComponent className={`${styles.nonThemeClass} ${props.dark ? "dark" : "light"}`}>
   {props.content}
 </MyComponent>
@@ -173,7 +173,7 @@ as possible.
 
 And it does look more of a hack to me, I can't lie…
 
-```js
+```jsx
 const [query, setQuery] = useState("");
 const [stillTyping, setStillTyping] = useState(true);
 const [currentTimeout, setCurrentTimeout] = useState(null);
@@ -206,7 +206,7 @@ as user types in search query, so I decided to implement that too.
 Next.js has `next/router` which is pretty convenient. However, for some reasons,
 when I use something like
 
-```js
+```jsx
 const router = useRouter();
 useState(() => {
   setQuery(decodeURIComponent(router.query.q));
@@ -226,7 +226,7 @@ Yes, that "Fine, I'll do it myself" meme. I was exactly in that position.
 
 And, eventually, I came up with this, which is still being used in the site.
 
-```js
+```jsx
 const getQuery = () => {
   const urlArr = window.location.href.split("?");
   if (urlArr.length === 1) return "";

@@ -2,6 +2,7 @@ import { Component } from "react";
 import Date from "./date";
 import TagList from "./tagList";
 import Prism from "prismjs";
+import "prismjs/components/prism-jsx";
 import styles from "./content.module.scss";
 
 export default class Content extends Component {
