@@ -48,13 +48,20 @@ export default function Search(props) {
   return <Layout dark={props.dark} changeMode={props.changeMode} title="Search"
     postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => updateQuery(q)} initial={query} />
-    {stillTyping ? <SearchPlaceholder dark={props.dark} type="searching" />
-                 : postsFiltered.length === 0
-                   ? <SearchPlaceholder dark={props.dark} type="not found" />
-                   : postsFiltered.map(post => (
-      <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
-        time={post.time} plain={post.plain} tag={post.tag} />
-    ))}
-    {!stillTyping && <SearchPlaceholder dark={props.dark} type="guide" />}
+    {(() => {
+      if (query === "") return <SearchPlaceholder dark={props.dark} type="guide" />;
+      if (stillTyping) return <SearchPlaceholder dark={props.dark} type="searching" />;
+      if (postsFiltered.length === 0)
+        return (
+          <>
+          <SearchPlaceholder dark={props.dark} type="not found" />
+          <SearchPlaceholder dark={props.dark} type="guide" />
+          </>
+        );
+      return postsFiltered.map(post => (
+        <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
+          time={post.time} plain={post.plain} tag={post.tag} />
+      ));
+    })()}
   </Layout>;
 }

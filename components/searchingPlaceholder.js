@@ -1,4 +1,4 @@
-import styles from "./searchPlaceholder.module.scss";
+import styles from "./searchingPlaceholder.module.scss";
 import Tag from "./tag";
 
 export default function SearchPlaceholder({ dark, type }) {
@@ -29,8 +29,16 @@ export default function SearchPlaceholder({ dark, type }) {
             <code>tag:cs1010</code>.
           </li>
           <li>
+            While posts do not have to match all words in the query to be matched,
+            if you use any <code>tag:</code> keywords in the query, posts have to
+            contain all of those keywords to be matched.
+          </li>
+          <li>
             This search engine does not take misspelling into account. Thus, to
             get the best result, please ensure your spelling is correct.
+          </li>
+          <li>
+            This search engine is case-insensitive.
           </li>
         </ul>
       </div>
