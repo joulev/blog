@@ -60,10 +60,15 @@ export default function Search(props) {
           <SearchPlaceholder dark={props.dark} type="guide" />
           </>
         );
-      return postsFiltered.map(post => (
-        <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
-          time={post.time} plain={post.plain} tag={post.tag} />
-      ));
+      return (
+        <>
+        <p><em>Found {postsFiltered.length} result{postsFiltered.length != 1 && "s"}</em></p>
+        {postsFiltered.map(post => (
+          <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
+            time={post.time} plain={post.plain} tag={post.tag} />
+        ))}
+        </>
+      );
     })()}
   </Layout>;
 }
