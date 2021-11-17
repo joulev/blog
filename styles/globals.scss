@@ -16,6 +16,7 @@ body.light {
   $background: map.get($light-theme, "background");
   $foreground: map.get($light-theme, "foreground");
   $primary: map.get($light-theme, "primary");
+  $code: map.get($light-theme, "code");
   $gray: map.get($light-theme, "gray");
   $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
   $light: $background;
@@ -23,6 +24,7 @@ body.light {
   $text-muted: $gray;
   background-color: $light;
   color: $dark;
+  :not(pre) > code { color: $code }
   a {
     text-decoration: none;
     transition: .15s ease-in-out;
@@ -43,6 +45,7 @@ body.dark {
   $background: map.get($dark-theme, "background");
   $foreground: map.get($dark-theme, "foreground");
   $primary: map.get($dark-theme, "primary");
+  $code: map.get($light-theme, "code");
   $gray: map.get($dark-theme, "gray");
   $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
   $light: $background;
@@ -50,6 +53,7 @@ body.dark {
   $text-muted: $gray;
   background-color: $light;
   color: $dark;
+  :not(pre) > code { color: $code }
   a {
     text-decoration: none;
     transition: .15s ease-in-out;
