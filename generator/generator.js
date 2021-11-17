@@ -1,3 +1,5 @@
+"use strict";
+
 // This should only be run server-side to add new articles.
 // To add articles, write the article to post.md, then run node generator.js
 if (typeof window !== "undefined") {
@@ -23,7 +25,7 @@ const frontMatter = {
 const dstFileName = `${matterRes.data.title.toLowerCase().replace(/\W/g, "-")}.md`;
 const dstFile = path.join(dstDir, dstFileName);
 
-let output = `---
+const output = `---
 title: "${frontMatter.title}"
 tag: ${frontMatter.tag}
 time: ${frontMatter.date}
