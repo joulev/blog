@@ -107,16 +107,16 @@
       box-shadow: none;
     }
     .leftPanelEnterActive {
-      height: 500px;
+      height: 540px;
       &.#{$name} { box-shadow: $box-shadow; }
       transition: .3s ease-in-out;
     }
     .leftPanelEnterDone {
-      height: 500px;
+      height: 540px;
       &.#{$name} { box-shadow: $box-shadow; }
     }
     .leftPanelExit {
-      height: 500px;
+      height: 540px;
       &.#{$name} { box-shadow: $box-shadow; }
     }
     .leftPanelExitActive {
