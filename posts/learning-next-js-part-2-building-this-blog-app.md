@@ -195,7 +195,7 @@ For any search page, we would like to reference a particular search query with
 a hyperlink, right? So I wanted to implement a query `q` in the URL such that,
 if the page loads with the following URL, for example,
 
-```
+```none
 https://blog.joulev.dev/search?q=hello%20world
 ```
 
