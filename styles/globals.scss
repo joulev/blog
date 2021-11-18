@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:color";
 @import "./variables";
-$primary: map.get($dark-theme, "primary");
+$primary: map.get($dark-theme, "primary"); // for dark mode switcher
 @import "./prism-one-monokai.css";
 @import "~bootstrap/scss/bootstrap";
 
@@ -17,60 +17,32 @@ pre, code {
   font-family: $font-family-code !important;
 }
 
-body.light {
-  $background: map.get($light-theme, "background");
-  $foreground: map.get($light-theme, "foreground");
-  $primary: map.get($light-theme, "primary");
-  $code: map.get($light-theme, "code");
-  $gray: map.get($light-theme, "gray");
-  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
-  $light: $background;
-  $dark: $foreground;
-  $text-muted: $gray;
-  background-color: $light;
-  color: $dark;
-  :not(pre) > code { color: $code }
-  a {
-    text-decoration: none;
-    transition: .15s ease-in-out;
-    color: $primary;
-    &:hover {
-      color: mix($primary, $dark, $weight: 60%);
-      text-decoration: underline;
+@mixin manage-theme($name, $theme-map) {
+  body.#{$name} {
+    $background: map.get($theme-map, "background");
+    $foreground: map.get($theme-map, "foreground");
+    $primary: map.get($theme-map, "primary");
+    $code: map.get($theme-map, "code");
+    $gray: map.get($theme-map, "gray");
+    background-color: $background;
+    color: $foreground;
+    :not(pre) > code { color: $code }
+    a {
+      text-decoration: none;
+      transition: .15s ease-in-out;
+      color: $primary;
+      &:hover {
+        color: mix($primary, $foreground, $weight: 60%);
+        text-decoration: underline;
+      }
     }
-  }
-  .card {
-    background: $light;
-    color: $dark;
-    border-color: mix($text-muted, $light, $weight: 40%);
+    .card {
+      background: $background;
+      color: $foreground;
+      border-color: mix($gray, $background, $weight: 40%);
+    }
   }
 }
 
-body.dark {
-  $background: map.get($dark-theme, "background");
-  $foreground: map.get($dark-theme, "foreground");
-  $primary: map.get($dark-theme, "primary");
-  $code: map.get($light-theme, "code");
-  $gray: map.get($dark-theme, "gray");
-  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
-  $light: $background;
-  $dark: $foreground;
-  $text-muted: $gray;
-  background-color: $light;
-  color: $dark;
-  :not(pre) > code { color: $code }
-  a {
-    text-decoration: none;
-    transition: .15s ease-in-out;
-    color: $primary;
-    &:hover {
-      color: mix($primary, $dark, $weight: 60%);
-      text-decoration: underline;
-    }
-  }
-  .card {
-    background: $light;
-    color: $dark;
-    border-color: mix($text-muted, $light, $weight: 40%);
-  }
-}
+@include manage-theme(light, $light-theme);
+@include manage-theme(dark, $dark-theme);
