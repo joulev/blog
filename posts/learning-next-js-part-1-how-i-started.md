@@ -4,7 +4,7 @@ tag: web nextjs react
 time: "2021-11-17T17:32:51.091+08:00"
 ---
 
-## Start with normal HTML &ndash; CSS &ndash; JavaScript
+## Start with normal HTML&ndash;CSS&ndash;JavaScript
 
 I have been interested in web development for a long time.
 
@@ -23,7 +23,7 @@ even contributed to a Jekyll website (only as a translator though *lol*):
 [LearnLaTeX](https://learnlatex.org).
 
 I'm still developing and maintaining a website right now with this good old
-HTML-CSS-JS combo in a group. Would love to put the link here too, but I can't
+HTML&ndash;CSS&ndash;JS combo in a group. Would love to put the link here too, but I can't
 for various reasons.
 
 ## React and Next.js
@@ -43,7 +43,7 @@ all of them.
 
 Of course, when one came to the Vercel website, knowing about Next.js is
 inevitable. Once again, I saw the word "React". But more importantly, since
-HTML-CSS-JS that I knew was all client-side, I was looking for more server-side
+HTML&ndash;CSS&ndash;JS that I knew was all client-side, I was looking for more server-side
 tools, and I saw the word "server rendering". It settled it. I determined that
 Next.js was a tool I must learn.
 
@@ -69,7 +69,7 @@ a new page in my web development path: it was time to learn React and Next.js.
 
 Since I attended the Hackerschool, although I was far from being able to use
 React myself, I at least got a good overview of the fundamental working of the
-library, and how it differs from the traiditional HTML-CSS-JS method. So,
+library, and how it differs from the traiditional HTML&ndash;CSS&ndash;JS method. So,
 when I started [the official React tutorial](https://reactjs.org/tutorial/tutorial.html),
 I could study it pretty quickly.
 
@@ -109,7 +109,7 @@ typing manually: they forget instantly.
 
 After the tutorial, I could say I understood a bit of how it works. Next.js
 could help me do automatic file-system-based routing, and that was really
-helpful, as I could arrange files like in the traditional HTML-CSS-JS format,
+helpful, as I could arrange files like in the traditional HTML&ndash;CSS&ndash;JS format,
 compared to React's manual routers. (Argh!)
 
 Controlling document metadata was also pretty straightforward with `next/head`,
