@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import moment from "moment";
 import styles from "./leftPanel.module.scss";
 import { getThemeClassName } from "../lib/utils";
 
@@ -26,7 +27,8 @@ export default function LeftPanel(props) {
         </div>
         <div className="small text-muted">
           Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.<br />
-          Build time: {props.buildInfo.time} (<code className="text-muted">{props.buildInfo.hash}</code>)
+          Commit <code className="text-muted">{props.versionInfo.hash}</code>{" "}
+          ({moment(props.versionInfo.time).format("HH:mm:ss D/MM/y")})
         </div>
       </div>
     </div>

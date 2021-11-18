@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import endArticle from "../../data/endArticle";
 import { listPosts, getPostContent } from "../../lib/getPosts";
-import { getBuildInfo } from "../../lib/buildInfo";
+import getCommitInfo from "../../lib/getCommitInfo";
 
 export async function getStaticPaths() {
   const posts = listPosts();
@@ -20,19 +20,19 @@ export async function getStaticPaths() {
 
 export function getStaticProps({ params }) {
   const post = getPostContent(params.id);
-  const buildInfo = getBuildInfo();
+  const versionInfo = getCommitInfo();
   return {
     props: {
-      buildInfo,
+      versionInfo,
       id: params.id,
       post
     }
   }
 }
 
-export default function Post({ dark, changeMode, buildInfo, post, id }) {
+export default function Post({ dark, changeMode, versionInfo, post, id }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
+    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
       title={post.data.title} postPage={true} content={post.content} data={post.data} activeLink={0}>
       {endArticle[id] === null ? null : endArticle[id]}
     </Layout>

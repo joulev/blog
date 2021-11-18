@@ -1,14 +1,14 @@
 import Layout from "../components/layout";
-import { getBuildInfo } from "../lib/buildInfo";
+import getCommitInfo from "../lib/getCommitInfo";
 
 export function getStaticProps() {
-  const buildInfo = getBuildInfo();
-  return { props: { buildInfo } }
+  const versionInfo = getCommitInfo();
+  return { props: { versionInfo } }
 }
 
-export default function About({ dark, changeMode, buildInfo }) {
+export default function About({ dark, changeMode, versionInfo }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
+    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
       title="About me" postPage={false} data={{}} activeLink={2}>
       <h1>About me</h1>
       <p>Hello. I am Dung. A Computer Engineering student in the National University of Singapore.</p>

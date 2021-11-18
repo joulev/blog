@@ -1,17 +1,17 @@
 import Layout from "../components/layout";
 import ArticleCard from "../components/articleCard";
 import { listPosts } from "../lib/getPosts";
-import { getBuildInfo } from "../lib/buildInfo";
+import getCommitInfo from "../lib/getCommitInfo";
 
 export function getStaticProps() {
   const posts = listPosts();
-  const buildInfo = getBuildInfo();
-  return { props: { posts, buildInfo } }
+  const versionInfo = getCommitInfo();
+  return { props: { posts, versionInfo } }
 }
 
-export default function Home({ dark, changeMode, buildInfo, posts }) {
+export default function Home({ dark, changeMode, versionInfo, posts }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
+    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
       title="Home" postPage={false} data={{}} activeLink={1}>
       <h1>Posts</h1>
       {posts.map(post => (

@@ -6,12 +6,12 @@ import SearchBox from "../components/searchBox";
 import SearchPlaceholder from "../components/searchingPlaceholder";
 import { listPosts } from "../lib/getPosts";
 import { filterPosts, parseSearchQuery } from "../lib/search";
-import { getBuildInfo } from "../lib/buildInfo";
+import getCommitInfo from "../lib/getCommitInfo";
 
 export async function getStaticProps() {
   const posts = listPosts();
-  const buildInfo = getBuildInfo();
-  return { props: { posts, buildInfo } }
+  const versionInfo = getCommitInfo();
+  return { props: { posts, versionInfo } }
 }
 
 export default function Search(props) {
@@ -47,7 +47,7 @@ export default function Search(props) {
       setPostsFiltered(filterPosts(props.posts, query));
     }, 500));
   };
-  return <Layout dark={props.dark} changeMode={props.changeMode} buildInfo={props.buildInfo}
+  return <Layout dark={props.dark} changeMode={props.changeMode} versionInfo={props.versionInfo}
     title="Search" postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => updateQuery(q)} initial={query} />
     {(() => {

@@ -1,14 +1,14 @@
 import Layout from "../components/layout";
-import { getBuildInfo } from "../lib/buildInfo";
+import getCommitInfo from "../lib/getCommitInfo";
 
 export function getStaticProps() {
-  const buildInfo = getBuildInfo();
-  return { props: { buildInfo } }
+  const versionInfo = getCommitInfo();
+  return { props: { versionInfo } }
 }
 
-export default function NotFound({ dark, changeMode, buildInfo }) {
+export default function NotFound({ dark, changeMode, versionInfo }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
+    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
       title="Page not found" postPage={false} data={{}} activeLink={0}>
       <h1>Page not found</h1>
       <p>The page you requested could not be found.</p>
