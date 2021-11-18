@@ -25,10 +25,12 @@ export default function LeftPanel(props) {
             onChange={() => props.changeMode()} />
           <label className="form-check-label" htmlFor="darkModeCheck">Dark mode</label>
         </div>
-        <div className="small text-muted">
-          Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.<br />
-          Commit <code className="text-muted">{props.versionInfo.hash}</code>{" "}
-          ({moment(props.versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(props.versionInfo.time).format("D/MM/y")})
+        <div className={`small text-muted ${styles.info}`}>
+          <div>Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.</div>
+          <div>
+            Commit&nbsp;<code className="text-muted">{props.versionInfo.hash}</code>{" "}
+            ({moment(props.versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(props.versionInfo.time).format("D/MM/y")})
+          </div>
         </div>
       </div>
     </div>
