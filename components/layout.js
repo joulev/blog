@@ -59,10 +59,11 @@ export default class Layout extends React.Component {
               <LeftPanel dark={this.props.dark} changeMode={this.changeMode} activeLink={this.props.activeLink} />
             </div>
           </CSSTransition>
-          <div className="col-md-8">
+          <div className={`col-md-8 ${styles.contentPanel}`}>
             <Content dark={this.props.dark} postPage={this.props.postPage}
               content={this.props.postPage ? this.props.content : this.props.children}
               data={this.props.data} />
+            {this.props.postPage && this.props.children ? <div>{this.props.children}</div> : null}
           </div>
         </div>
         <div className={`${styles.topBtns}

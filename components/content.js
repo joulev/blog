@@ -3,14 +3,13 @@ import Date from "./date";
 import TagList from "./tagList";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx";
-import styles from "./content.module.scss";
 
 export default class Content extends Component {
   componentDidMount() {
     Prism.highlightAll();
   }
   render = () => this.props.postPage ? (
-    <div className={styles.all}>
+    <div>
       <div className="pb-4">
         <h1>{this.props.data.title}</h1>
         <div className="mt-3 fs-5 text-muted"><Date time={this.props.data.time} /></div>
@@ -19,6 +18,6 @@ export default class Content extends Component {
       <div dangerouslySetInnerHTML={{ __html: this.props.content }} />
     </div>
   ) : (
-    <div className={styles.all}>{this.props.content}</div>
+    <div>{this.props.content}</div>
   );
 }

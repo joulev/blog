@@ -2,6 +2,10 @@
 @use "sass:map";
 @import "../styles/variables";
 
+.contentPanel {
+  padding: 3.5rem 0;
+}
+
 .topBtns {
   cursor: pointer;
   padding: 7px;
