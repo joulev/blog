@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import { getBuildInfo } from "../lib/utils";
+import { getBuildInfo } from "../lib/buildInfo";
 
 export function getStaticProps() {
   const buildInfo = getBuildInfo();

@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import ArticleCard from "../components/articleCard";
 import { listPosts } from "../lib/getPosts";
-import { getBuildInfo } from "../lib/utils";
+import { getBuildInfo } from "../lib/buildInfo";
 
 export function getStaticProps() {
   const posts = listPosts();

@@ -2,7 +2,7 @@ import Layout from "../../components/layout";
 import ArticleCard from "../../components/articleCard";
 import { getTagInformation, getTags } from "../../lib/getTags";
 import BigTag from "../../components/bigTag";
-import { getBuildInfo } from "../../lib/utils";
+import { getBuildInfo } from "../../lib/buildInfo";
 
 export function getStaticPaths() {
   const tags = getTags();

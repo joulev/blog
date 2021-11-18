@@ -26,7 +26,7 @@ export default function LeftPanel(props) {
         </div>
         <div className="small text-muted">
           Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.<br />
-          Build time: {props.buildInfo.time}
+          Build time: {props.buildInfo.time} (<code className="text-muted">{props.buildInfo.hash}</code>)
         </div>
       </div>
     </div>

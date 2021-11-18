@@ -6,7 +6,7 @@ import SearchBox from "../components/searchBox";
 import SearchPlaceholder from "../components/searchingPlaceholder";
 import { listPosts } from "../lib/getPosts";
 import { filterPosts, parseSearchQuery } from "../lib/search";
-import { getBuildInfo } from "../lib/utils";
+import { getBuildInfo } from "../lib/buildInfo";
 
 export async function getStaticProps() {
   const posts = listPosts();
