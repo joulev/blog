@@ -1,9 +1,9 @@
 @use "sass:map";
 @use "sass:color";
 @import "./variables";
-$primary: map.get($dark-theme, "primary"); // for dark mode switcher
-@import "./prism-one-monokai.css";
+$primary: map.get($light-theme, "primary"); // for dark mode switcher
 @import "~bootstrap/scss/bootstrap";
+@import "./prism-custom-monokai.css";
 
 html, body {
   margin: 0;
@@ -11,10 +11,6 @@ html, body {
 }
 body {
   overflow-y: scroll;
-}
-
-pre, code {
-  font-family: $font-family-code !important;
 }
 
 @mixin manage-theme($name, $theme-map) {
