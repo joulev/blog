@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import endArticle from "../../data/endArticle";
 import { listPosts, getPostContent } from "../../lib/getPosts";
-import { getBuildInfo } from "../../lib/utils";
+import { getBuildInfo } from "../../lib/buildInfo";
 
 export async function getStaticPaths() {
   const posts = listPosts();
