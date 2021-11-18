@@ -6,16 +6,9 @@ import getCommitInfo from "../../lib/getCommitInfo";
 export async function getStaticPaths() {
   const posts = listPosts();
   const routerArr = posts.map(post => {
-    return {
-      params: {
-        id: post.name,
-      }
-    }
+    return { params: { id: post.name, } }
   });
-  return {
-    paths: routerArr,
-    fallback: false
-  }
+  return { paths: routerArr, fallback: false }
 }
 
 export function getStaticProps({ params }) {

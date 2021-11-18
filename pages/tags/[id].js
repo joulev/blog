@@ -9,10 +9,7 @@ export function getStaticPaths() {
   const routerArr = tags.map(tag => {
     return { params: { id: tag } };
   });
-  return {
-    paths: routerArr,
-    fallback: false
-  }
+  return { paths: routerArr, fallback: false }
 }
 
 export function getStaticProps({ params }) {

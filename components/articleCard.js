@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Date from "../components/date";
 import TagList from "../components/tagList";
-import { getPostUrlFromProps, truncatePlainContent } from "../lib/utils";
+import { truncatePlainContent } from "../lib/utils";
 
 export default function ArticleCard({ dark, name, title, time, plain, tag }) {
   return (

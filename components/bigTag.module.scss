@@ -11,13 +11,7 @@
 
 @mixin manage-theme($name, $theme-map) {
   $background: map.get($theme-map, "background");
-  $foreground: map.get($theme-map, "foreground");
   $primary: map.get($theme-map, "primary");
-  $gray: map.get($theme-map, "gray");
-  $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
-  $light: $background;
-  $dark: $foreground;
-  $text-muted: $gray;
   .tag.#{$name} {
     color: $primary;
     background: mix($primary, $background, 20%);

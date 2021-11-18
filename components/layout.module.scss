@@ -33,6 +33,17 @@
 }
 
 @media (max-width: 767.98px) {
+  .leftPanel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    box-shadow: none;
+    overflow: hidden;
+    height: 0;
+  }
+
   .toggleEnterActive, .toggleEnterDone {
     line:first-of-type {
       transform: translate(12px, 12px) rotate(45deg) translate(-12px, -6px);
@@ -66,12 +77,8 @@
 @mixin manage-theme($name, $theme-map) {
   $background: map.get($theme-map, "background");
   $foreground: map.get($theme-map, "foreground");
-  $primary: map.get($theme-map, "primary");
   $gray: map.get($theme-map, "gray");
   $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
-  $light: $background;
-  $dark: $foreground;
-  $text-muted: $gray;
   .topBtns.#{$name} {
     transition: .15s ease-in-out;
     > svg > line {
@@ -91,17 +98,9 @@
   }
 
   @media (max-width: 767.98px) {
-    .leftPanel {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      box-shadow: none;
-      overflow: hidden;
-      height: 0;
-      &.#{$name} { background: $background; }
-    }
+    .leftPanel.#{$name} { background: $background; }
+    // for some reasons I have to keep the following here, including the non-
+    // theme properties. Otherwise the panel doesn't work
     .leftPanelEnter {
       height: 0;
       box-shadow: none;
