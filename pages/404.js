@@ -1,9 +1,15 @@
+import moment from "moment";
 import Layout from "../components/layout";
 
-export default function NotFound({ dark, changeMode }) {
+export function getStaticProps() {
+  const buildTime = moment().format("HH:mm:ss D/MM/YY (ZZ)");
+  return { props: { buildTime } }
+}
+
+export default function NotFound({ dark, changeMode, buildTime }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} title="Page not found" postPage={false} data={{}}
-      activeLink={0}>
+    <Layout dark={dark} changeMode={changeMode} buildTime={buildTime}
+      title="Page not found" postPage={false} data={{}} activeLink={0}>
       <h1>Page not found</h1>
       <p>The page you requested could not be found.</p>
       <p>
