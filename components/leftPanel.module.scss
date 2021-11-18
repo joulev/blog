@@ -8,9 +8,19 @@
   height: 500px;
   @media (min-width: 768px) {
     height: 100vh;
+    padding: 3.5rem 0;
   }
-  .avatar {
-    border-radius: 50%;
+  .avatarContainer {
+    @media (max-height: 500px) {
+      max-width: 20vh;
+      margin: 0 auto;
+    }
+    @media (max-height: 400px) {
+      display: none;
+    }
+    .avatar {
+      border-radius: 50%;
+    }
   }
   .btnGroup {
     div {
