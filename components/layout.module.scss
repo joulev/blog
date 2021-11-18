@@ -77,7 +77,7 @@
     }
     &.downEnough {
       border: 1px solid mix($gray, $background, 40%);
-      background: mix($gray, $background, 20%);
+      background: mix($gray, $background, 10%);
     }
     &.notDownEnough {
       border: 1px solid $background;

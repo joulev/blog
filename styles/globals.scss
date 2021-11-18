@@ -41,6 +41,13 @@ pre, code {
       color: $foreground;
       border-color: mix($gray, $background, $weight: 40%);
     }
+    blockquote {
+      padding: 1rem;
+      border-left: 5px solid mix($gray, $foreground, 50%);
+      color: mix($gray, $foreground, 50%);
+      background: mix($gray, $background, 10%);
+      p:last-of-type { margin-bottom: 0; }
+    }
   }
 }
 
