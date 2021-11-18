@@ -27,6 +27,20 @@ pre, code {
     background-color: $background;
     color: $foreground;
     :not(pre) > code { color: $code }
+    .btn-primary {
+      background: $primary;
+      color: white;
+      text-decoration: none;
+      border: none;
+      box-shadow: 0 2px 4px 0 color.adjust(color.scale($primary, $lightness: -20%), $alpha: 0.5);
+      transition: .15s ease-in-out;
+      &:hover {
+        background: color.scale($primary, $lightness: -20%);
+        text-decoration: none;
+        color: white;
+        box-shadow: 0 3px 6px 0 color.adjust(color.scale($primary, $lightness: -40%), $alpha: 0.5);
+      }
+    }
     a {
       text-decoration: none;
       transition: .15s ease-in-out;
