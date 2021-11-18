@@ -25,7 +25,8 @@ export default function LeftPanel(props) {
           <label className="form-check-label" htmlFor="darkModeCheck">Dark mode</label>
         </div>
         <div className="small text-muted">
-          Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.
+          Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.<br />
+          Build time: {props.buildTime}
         </div>
       </div>
     </div>
