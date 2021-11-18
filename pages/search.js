@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import moment from "moment";
 import ArticleCard from "../components/articleCard";
 import Layout from "../components/layout";
 import SearchBox from "../components/searchBox";
 import SearchPlaceholder from "../components/searchingPlaceholder";
 import { listPosts } from "../lib/getPosts";
 import { filterPosts, parseSearchQuery } from "../lib/search";
+import { getBuildInfo } from "../lib/utils";
 
 export async function getStaticProps() {
   const posts = listPosts();
-  const buildTime = moment().format("HH:mm:ss D/MM/YY (ZZ)");
-  return { props: { posts, buildTime } }
+  const buildInfo = getBuildInfo();
+  return { props: { posts, buildInfo } }
 }
 
 export default function Search(props) {
@@ -47,7 +47,7 @@ export default function Search(props) {
       setPostsFiltered(filterPosts(props.posts, query));
     }, 500));
   };
-  return <Layout dark={props.dark} changeMode={props.changeMode} buildTime={props.buildTime}
+  return <Layout dark={props.dark} changeMode={props.changeMode} buildInfo={props.buildInfo}
     title="Search" postPage={false} data={{}} activeLink={3}>
     <SearchBox dark={props.dark} onChange={q => updateQuery(q)} initial={query} />
     {(() => {

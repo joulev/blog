@@ -1,7 +1,7 @@
-import moment from "moment";
 import Layout from "../../components/layout";
 import endArticle from "../../data/endArticle";
 import { listPosts, getPostContent } from "../../lib/getPosts";
+import { getBuildInfo } from "../../lib/utils";
 
 export async function getStaticPaths() {
   const posts = listPosts();
@@ -20,19 +20,19 @@ export async function getStaticPaths() {
 
 export function getStaticProps({ params }) {
   const post = getPostContent(params.id);
-  const buildTime = moment().format("HH:mm:ss D/MM/YY (ZZ)");
+  const buildInfo = getBuildInfo();
   return {
     props: {
-      buildTime,
+      buildInfo,
       id: params.id,
       post
     }
   }
 }
 
-export default function Post({ dark, changeMode, buildTime, post, id }) {
+export default function Post({ dark, changeMode, buildInfo, post, id }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildTime={buildTime}
+    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
       title={post.data.title} postPage={true} content={post.content} data={post.data} activeLink={0}>
       {endArticle[id] === null ? null : endArticle[id]}
     </Layout>

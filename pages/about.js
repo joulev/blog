@@ -1,14 +1,14 @@
-import moment from "moment";
 import Layout from "../components/layout";
+import { getBuildInfo } from "../lib/utils";
 
 export function getStaticProps() {
-  const buildTime = moment().format("HH:mm:ss D/MM/YY (ZZ)");
-  return { props: { buildTime } }
+  const buildInfo = getBuildInfo();
+  return { props: { buildInfo } }
 }
 
-export default function About({ dark, changeMode, buildTime }) {
+export default function About({ dark, changeMode, buildInfo }) {
   return (
-    <Layout dark={dark} changeMode={changeMode} buildTime={buildTime}
+    <Layout dark={dark} changeMode={changeMode} buildInfo={buildInfo}
       title="About me" postPage={false} data={{}} activeLink={2}>
       <h1>About me</h1>
       <p>Hello. I am Dung. A Computer Engineering student in the National University of Singapore.</p>
