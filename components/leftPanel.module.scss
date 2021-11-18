@@ -41,6 +41,12 @@
     position: absolute;
     bottom: 0;
     padding: 1rem 0;
+    .info > div {
+      display: inline-block;
+      &:first-of-type {
+        margin-right: .5rem;
+      }
+    }
   }
 }
 
