@@ -30,7 +30,7 @@ export default function TagPage(props) {
     <Layout dark={props.dark} changeMode={props.changeMode} title={`Tag [${props.tag}]`} postPage={false}
       data={{}} activeLink={0}>
       <BigTag dark={props.dark} tagName={props.tag} />
-      <p className={props.description === "(no description)" && "text-muted"}>{props.description}</p>
+      <p className={props.description === "(no description)" ? "text-muted" : ""}>{props.description}</p>
       {props.posts.map(post => (
         <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
           time={post.time} plain={post.plain} tag={post.tag} />
