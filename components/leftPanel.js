@@ -29,7 +29,9 @@ export default function LeftPanel(props) {
           <div>Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.</div>
           <div>
             Commit&nbsp;<code className="text-muted">{props.versionInfo.hash}</code>{" "}
-            ({moment(props.versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(props.versionInfo.time).format("D/MM/y")})
+            (<time dateTime={props.versionInfo.time} title={moment(props.time).toISOString(false)}>
+              {moment(props.versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(props.versionInfo.time).format("D/MM/y")}
+            </time>)
           </div>
         </div>
       </div>
