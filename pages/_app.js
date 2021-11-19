@@ -6,10 +6,7 @@ import Loading from "../components/loading";
 export default function App({ Component, pageProps }) {
   const [loaded, setLoaded] = useState(false);
   const router = useRouter();
-  useEffect(() => {
-    router.events.on("routeChangeStart", setLoaded(false));
-    router.events.on("routeChangeComplete", setLoaded(true));
-  }, [router])
+  useEffect(() => setLoaded(router.isReady), [router])
   const [dark, setDark] = useState(true);
   const changeMode = () => setDark(dark => !dark);
   useEffect(() => {
