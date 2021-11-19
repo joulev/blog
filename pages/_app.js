@@ -1,6 +1,7 @@
 import "../styles/globals.scss";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Loading from "../components/loading";
 
 export default function App({ Component, pageProps }) {
   const [loaded, setLoaded] = useState(false);
@@ -21,6 +22,6 @@ export default function App({ Component, pageProps }) {
   }, [dark]);
   return <>{
     loaded ? <Component dark={dark} changeMode={changeMode} {...pageProps} />
-           : <div style={{ fontSize: "100px" }}>Loading</div>
+           : <Loading />
   }</>;
 }
