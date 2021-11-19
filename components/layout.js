@@ -18,11 +18,8 @@ export default function Layout(props) {
   };
   const onScroll = () => {
     const scrollTop = window.scrollY;
-    if (downEnough) {
-      if (scrollTop < 30) setDownEnough(false);
-    } else {
-      if (scrollTop >= 30) setDownEnough(true);
-    }
+    if (scrollTop < 30) setDownEnough(false);
+    else setDownEnough(true);
   };
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
