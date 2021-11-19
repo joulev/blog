@@ -60,6 +60,9 @@
       color: $primary;
     }
   }
+  .avatar.#{$name} {
+    border: 2px solid $primary !important;
+  }
 }
 
 

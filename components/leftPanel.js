@@ -9,7 +9,8 @@ export default function LeftPanel(props) {
     <div className={`${styles.all}`}>
       <div className="text-center pb-4">
         <div className={styles.avatarContainer}>
-          <Image src="/avatar.jpg" width={150} height={150} alt="joulev" className={styles.avatar}/>
+          <Image src="/avatar.jpg" width={150} height={150} alt="joulev"
+            className={`${styles.avatar} ${getThemeClassName(styles, props.dark)}`}/>
         </div>
         <h3 className={styles.name}>Vu Van Dung</h3>
         <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-muted">@joulev</a>
