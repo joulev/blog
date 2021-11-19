@@ -1,3 +1,9 @@
+@use "sass:map";
+@import "../styles/variables";
+
+$background: map.get($dark-theme, "background");
+$foreground: map.get($dark-theme, "foreground");
+
 .all {
   position: fixed;
   top: 0;
@@ -8,6 +14,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background: $background;
+  color: $foreground;
   .spinner {
     width: 3rem;
     height: 3rem;
