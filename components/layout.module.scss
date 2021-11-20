@@ -91,7 +91,7 @@
       stroke: $foreground;
     }
     &:hover {
-      border-color: $gray;
+      border-color: $gray !important;
     }
     &.downEnough {
       border: 1px solid mix($gray, $background, 40%);
