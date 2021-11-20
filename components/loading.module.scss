@@ -1,8 +1,10 @@
 @use "sass:map";
 @import "../styles/variables";
 
-$background: map.get($dark-theme, "background");
-$foreground: map.get($dark-theme, "foreground");
+$background-dark : map.get($dark-theme,  "background");
+$foreground-dark : map.get($dark-theme,  "foreground");
+$background-light: map.get($light-theme, "background");
+$foreground-light: map.get($light-theme, "foreground");
 
 .all {
   position: fixed;
@@ -14,8 +16,12 @@ $foreground: map.get($dark-theme, "foreground");
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: $background;
-  color: $foreground;
+  background: $background-dark;
+  color: $foreground-dark;
+  @media (prefers-color-scheme: light) {
+    background: $background-light;
+    color: $foreground-light;
+  }
   .spinner {
     width: 3rem;
     height: 3rem;

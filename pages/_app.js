@@ -11,6 +11,11 @@ export default function App({ Component, pageProps }) {
   const changeMode = () => setDark(dark => !dark);
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
+    if (!storedTheme) {
+      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+        storedTheme = "light";
+      }
+    }
     setDark(storedTheme ? storedTheme === "dark" : true);
   }, []);
   useEffect(() => {
