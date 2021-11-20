@@ -8,7 +8,10 @@ export default function Footer({ versionInfo, className }) {
         and <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">Bootstrap</a>.
       </div>
       <div>
-        Commit&nbsp;<code className="text-muted">{versionInfo.hash}</code>{" "}
+        Commit&nbsp;
+        <a href={`https://github.com/joulev/blog/commit/${versionInfo.hash}`} target="_blank" rel="noreferrer">
+          <code>{versionInfo.hash}</code>
+        </a>{" "}
         (<time dateTime={versionInfo.time} title={moment(versionInfo.time).toISOString(false)}>
           {moment(versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(versionInfo.time).format("D/MM/y")}
         </time>)
