@@ -18,6 +18,7 @@
     div:last-of-type { padding: .5rem 0; }
     @media (max-height: 480px) {
       div:first-of-type { display: none; }
+      div:last-of-type { padding: 0; }
       @media (min-width: 996px) {
         display: flex;
         gap: 1rem;
@@ -30,7 +31,6 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
-          padding: 0;
         }
       }
     }
