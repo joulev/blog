@@ -1,3 +1,6 @@
+$font-family-sans-serif: "PT Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-monospace: "Meslo LG S", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
 $light-theme: (
   "background": #fcfcfa,
   "foreground": #221f22,
@@ -14,6 +17,8 @@ $dark-theme: (
   "gray": #939293
 );
 
+$primary: map.get($light-theme, "primary"); // for dark mode switcher
+
 $grid-gutter-width: 4rem;
 $gutters: (
   0: 0,
@@ -23,7 +28,9 @@ $gutters: (
   4: $grid-gutter-width * 1.5,
   5: $grid-gutter-width * 3,
 );
+
 $paragraph-margin-bottom: 1.5rem;
+
 $headings-margin-bottom: 1.5rem;
 $headings-margin-top: 2.5rem;
 

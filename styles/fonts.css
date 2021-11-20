@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "PT Sans";
+  src: url("/fonts/pt-sans/PTSans-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("/fonts/pt-sans/PTSans-Italic.woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("/fonts/pt-sans/PTSans-Bold.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "PT Sans";
+  src: url("/fonts/pt-sans/PTSans-BoldItalic.woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Meslo LG S";
+  src: url("/fonts/meslo-lg-s/MesloLGS-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Meslo LG S";
+  src: url("/fonts/meslo-lg-s/MesloLGS-Italic.woff");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Meslo LG S";
+  src: url("/fonts/meslo-lg-s/MesloLGS-Bold.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Meslo LG S";
+  src: url("/fonts/meslo-lg-s/MesloLGS-BoldItalic.woff");
+  font-weight: bold;
+  font-style: italic;
+}
