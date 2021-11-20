@@ -15,10 +15,10 @@ export default function Footer({ versionInfo, className }) {
       </div>
       <div className="row mt-2 gx-0">
         <div className="col-6">
-          <a href="https://github.com/joulev/blog">GitHub</a>
+          <a href="https://github.com/joulev/blog" target="_blank" rel="noreferrer">GitHub</a>
         </div>
         <div className="col-6">
-          <a href="mailto:joulev.vvd@yahoo.com">Email</a>
+          <a href="mailto:joulev.vvd@yahoo.com" target="_blank" rel="noreferrer">Email</a>
         </div>
       </div>
     </div>
