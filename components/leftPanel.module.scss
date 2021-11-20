@@ -11,25 +11,29 @@
     height: 540px;
     padding-top: 3.5rem;
   }
-  .avatarContainer {
-    @media (max-height: 500px) {
+  .infoContainer {
+    @media (max-height: 400px) {
       display: none;
     }
-    .avatar {
-      border-radius: 50%;
+    .avatarContainer {
+      @media (max-height: 500px) {
+        display: none;
+      }
+      .avatar {
+        border-radius: 50%;
+      }
     }
   }
   .btnGroup {
-    div {
-      display: block;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    a {
+      border-radius: $border-radius;
       text-align: center;
       padding: .5rem 0;
-      a {
-        font-size: large;
-        text-decoration: none !important;
-        &.active {
-          font-weight: bold;
-        }
+      &.active {
+        font-weight: bold;
       }
     }
   }
@@ -48,12 +52,19 @@
 
 @mixin manage-theme($name, $theme-map) {
   $foreground: map.get($theme-map, "foreground");
+  $background: map.get($theme-map, "background");
   $primary: map.get($theme-map, "primary");
+  $gray: map.get($theme-map, "gray");
   .btnGroup.#{$name} a {
     color: $foreground;
-    transition: color .15s ease-in-out;
+    &.active {
+      color: $primary !important;
+      background-color: mix($primary, $background, 20%) !important;
+    }
     &:hover {
-      color: $primary;
+      color: $foreground;
+      text-decoration: none;
+      background-color: mix($gray, $background, 20%);
     }
   }
   .avatar.#{$name} {

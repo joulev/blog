@@ -4,7 +4,7 @@
 
 .tag {
   padding: .15rem .4rem;
-  border-radius: 5px;
+  border-radius: $border-radius;
 }
 
 @mixin manage-theme($name, $theme-map) {

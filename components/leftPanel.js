@@ -7,18 +7,20 @@ import { getThemeClassName } from "../lib/utils";
 export default function LeftPanel(props) {
   return (
     <div className={`${styles.all}`}>
-      <div className="text-center pb-4">
+      <div className={`text-center pb-4 ${styles.infoContainer}`}>
         <div className={styles.avatarContainer}>
           <Image src="/avatar.jpg" width={100} height={100} alt="joulev"
             className={`${styles.avatar} ${getThemeClassName(styles, props.dark)}`}/>
         </div>
-        <h3 className="mt-2 mb-1">Vu Van Dung</h3>
-        <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-muted">@joulev</a>
+        <div>
+          <h3 className="mt-2 mb-1">Vu Van Dung</h3>
+          <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-muted">@joulev</a>
+        </div>
       </div>
       <div className={`${styles.btnGroup} ${getThemeClassName(styles, props.dark)}`}>
-        <div><Link href="/"      ><a className={props.activeLink === 1 ? styles.active : ""}>Home</a></Link></div>
-        <div><Link href="/about" ><a className={props.activeLink === 2 ? styles.active : ""}>About me</a></Link></div>
-        <div><Link href="/search"><a className={props.activeLink === 3 ? styles.active : ""}>Search</a></Link></div>
+        <Link href="/"      ><a className={props.activeLink === 1 ? styles.active : ""}>Home</a></Link>
+        <Link href="/about" ><a className={props.activeLink === 2 ? styles.active : ""}>About me</a></Link>
+        <Link href="/search"><a className={props.activeLink === 3 ? styles.active : ""}>Search</a></Link>
       </div>
       <div className={styles.footer}>
         <div className="form-check form-switch">

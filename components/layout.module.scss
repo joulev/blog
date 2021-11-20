@@ -16,7 +16,7 @@
 .topBtns {
   cursor: pointer;
   padding: 7px;
-  border-radius: 5px;
+  border-radius: $border-radius;
   z-index: 300;
   display: none;
   @media (max-width: 767.98px) {
