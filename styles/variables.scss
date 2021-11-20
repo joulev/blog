@@ -13,3 +13,16 @@ $dark-theme: (
   "code": #fc9867,
   "gray": #939293
 );
+
+$grid-gutter-width: 4rem;
+$gutters: (
+  0: 0,
+  1: $grid-gutter-width * .25,
+  2: $grid-gutter-width * .5,
+  3: $grid-gutter-width,
+  4: $grid-gutter-width * 1.5,
+  5: $grid-gutter-width * 3,
+);
+$paragraph-margin-bottom: 1.5rem;
+$headings-margin-bottom: 1.5rem;
+$headings-margin-top: 2.5rem;

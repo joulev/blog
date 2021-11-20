@@ -11,11 +11,9 @@ export default function Content(props) {
   if (props.postPage) {
     return (
       <div>
-        <div className="pb-4">
-          <h1>{props.data.title}</h1>
-          <div className="mt-3 fs-5 text-muted"><Date time={props.data.time} /></div>
-          <div className="mt-2"><TagList dark={props.dark} tags={props.data.tag} /></div>
-        </div>
+        <h1>{props.data.title}</h1>
+        <div className="mt-3 fs-5 text-muted"><Date time={props.data.time} /></div>
+        <div className="mt-2"><TagList dark={props.dark} tags={props.data.tag} /></div>
         <div dangerouslySetInnerHTML={{ __html: props.content }} />
       </div>
     );

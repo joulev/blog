@@ -5,7 +5,7 @@ import { truncatePlainContent } from "../lib/utils";
 
 export default function ArticleCard({ dark, name, title, time, plain, tag }) {
   return (
-    <div className="card mb-3">
+    <div className="card mb-4">
       <div className="card-body">
         <Link href={`/posts/${name}`}>
           <a className="h5 card-title">{title}</a>

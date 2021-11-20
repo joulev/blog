@@ -3,6 +3,7 @@
 @import "./variables";
 $primary: map.get($light-theme, "primary"); // for dark mode switcher
 @import "~bootstrap/scss/bootstrap";
+@import "./bootstrap-fix";
 @import "./prism-theme";
 
 html, body {

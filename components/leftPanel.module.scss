@@ -13,10 +13,6 @@
   }
   .avatarContainer {
     @media (max-height: 500px) {
-      max-width: 20vh;
-      margin: 0 auto;
-    }
-    @media (max-height: 400px) {
       display: none;
     }
     .avatar {
