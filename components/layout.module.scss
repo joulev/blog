@@ -96,6 +96,10 @@
   $foreground: map.get($theme-map, "foreground");
   $gray: map.get($theme-map, "gray");
   $box-shadow: 0 .5rem 1rem rgba($foreground, .15);
+  .mobileFooter.#{$name} {
+    background-color: mix($background, $gray, 90%);
+  }
+
   .topBtns.#{$name} {
     transition: .15s ease-in-out;
     > svg > line {

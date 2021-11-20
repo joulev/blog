@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import moment from "moment";
+import Footer from "./footer";
 import styles from "./leftPanel.module.scss";
 import { getThemeClassName } from "../lib/utils";
 
@@ -28,14 +28,8 @@ export default function LeftPanel(props) {
             onChange={() => props.changeMode()} />
           <label className="form-check-label" htmlFor="darkModeCheck">Dark mode</label>
         </div>
-        <div className={`small text-muted ${styles.info}`}>
-          <div>Site built with <a href="https://nextjs.org" target="_blank" rel="noreferrer">Next.js</a>.</div>
-          <div>
-            Commit&nbsp;<code className="text-muted">{props.versionInfo.hash}</code>{" "}
-            (<time dateTime={props.versionInfo.time} title={moment(props.versionInfo.time).toISOString(false)}>
-              {moment(props.versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(props.versionInfo.time).format("D/MM/y")}
-            </time>)
-          </div>
+        <div className="d-none d-md-block">
+          <Footer versionInfo={props.versionInfo} className="" />
         </div>
       </div>
     </div>

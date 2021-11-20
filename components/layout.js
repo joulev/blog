@@ -6,6 +6,7 @@ import LeftPanel from "./leftPanel";
 import Content from "./content";
 import { getThemeClassName } from "../lib/utils";
 import styles from "./layout.module.scss";
+import Footer from "./footer";
 
 export default function Layout(props) {
   const [sideBarHidden, setSideBarHidden] = useState(true);
@@ -52,50 +53,53 @@ export default function Layout(props) {
           {props.postPage && props.children ? <div>{props.children}</div> : null}
         </div>
       </div>
-      <div className={`${styles.topBtns}
-          ${downEnough && sideBarHidden ? styles.downEnough : styles.notDownEnough}
-          ${styles.toggle} ${getThemeClassName(styles, props.dark)}`}
-        onClick={() => setSideBarHidden(!sideBarHidden)}>
-        <CSSTransition in={!sideBarHidden} timeout={600}
-          classNames={{
-            enter:        styles.toggleEnter,
-            enterActive:  styles.toggleEnterActive,
-            enterDone:    styles.toggleEnterDone,
-            exit:         styles.toggleExit,
-            exitActive:   styles.toggleExitActive
-          }}>
-          <svg width="24" height="24">
-            <line x1="0" y1="6" x2="24" y2="6" />
-            <line x1="0" y1="18" x2="24" y2="18" />
-          </svg>
-        </CSSTransition>
-      </div>
-      <Link href="/" passHref>
-        <div className={`${styles.topBtns}
-          ${downEnough && sideBarHidden ? styles.downEnough : styles.notDownEnough}
-          ${styles.homeBtn} ${getThemeClassName(styles, props.dark)}`}>
-          <svg width="24" height="24">
-            <line x1= "6" y1="20" x2="18" y2="20" />
-            <line x1= "6" y1="20" x2= "6" y2= "8" />
-            <line x1="18" y1="20" x2="18" y2= "8" />
-            <line x1="12" y1= "2" x2= "3" y2="11" />
-            <line x1="12" y1= "2" x2="21" y2="11" />
-            <line x1="18" y1= "8" x2="18" y2= "0" style={{ strokeWidth: "3px" }} />
-          </svg>
-        </div>
-      </Link>
-      <div className={`${styles.topBtns}
-        ${downEnough ? styles.downEnough : styles.notDownEnough}
-        ${styles.toTop} ${getThemeClassName(styles, props.dark)}`}
-        onClick={() => {
-          if (downEnough) window.scrollTo({ top: 0, behavior: "smooth" });
+    </div>
+    <div className={`d-md-none py-4 ${styles.mobileFooter} ${getThemeClassName(styles, props.dark)}`}>
+      <Footer versionInfo={props.versionInfo} className="container" />
+    </div>
+    <div className={`${styles.topBtns}
+        ${downEnough && sideBarHidden ? styles.downEnough : styles.notDownEnough}
+        ${styles.toggle} ${getThemeClassName(styles, props.dark)}`}
+      onClick={() => setSideBarHidden(!sideBarHidden)}>
+      <CSSTransition in={!sideBarHidden} timeout={600}
+        classNames={{
+          enter:        styles.toggleEnter,
+          enterActive:  styles.toggleEnterActive,
+          enterDone:    styles.toggleEnterDone,
+          exit:         styles.toggleExit,
+          exitActive:   styles.toggleExitActive
         }}>
         <svg width="24" height="24">
-          <line x1="12" y1="2" x2="12" y2="20" />
-          <line x1="12" y1="2" x2= "3" y2="11" />
-          <line x1="12" y1="2" x2="21" y2="11" />
+          <line x1="0" y1="6" x2="24" y2="6" />
+          <line x1="0" y1="18" x2="24" y2="18" />
+        </svg>
+      </CSSTransition>
+    </div>
+    <Link href="/" passHref>
+      <div className={`${styles.topBtns}
+        ${downEnough && sideBarHidden ? styles.downEnough : styles.notDownEnough}
+        ${styles.homeBtn} ${getThemeClassName(styles, props.dark)}`}>
+        <svg width="24" height="24">
+          <line x1= "6" y1="20" x2="18" y2="20" />
+          <line x1= "6" y1="20" x2= "6" y2= "8" />
+          <line x1="18" y1="20" x2="18" y2= "8" />
+          <line x1="12" y1= "2" x2= "3" y2="11" />
+          <line x1="12" y1= "2" x2="21" y2="11" />
+          <line x1="18" y1= "8" x2="18" y2= "0" style={{ strokeWidth: "3px" }} />
         </svg>
       </div>
+    </Link>
+    <div className={`${styles.topBtns}
+      ${downEnough ? styles.downEnough : styles.notDownEnough}
+      ${styles.toTop} ${getThemeClassName(styles, props.dark)}`}
+      onClick={() => {
+        if (downEnough) window.scrollTo({ top: 0, behavior: "smooth" });
+      }}>
+      <svg width="24" height="24">
+        <line x1="12" y1="2" x2="12" y2="20" />
+        <line x1="12" y1="2" x2= "3" y2="11" />
+        <line x1="12" y1="2" x2="21" y2="11" />
+      </svg>
     </div>
   </>;
 }
