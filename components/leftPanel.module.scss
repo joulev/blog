@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   height: 100vh;
-  padding: 3.5rem 0;
+  padding: 3.5rem 1rem;
   @media (max-width: 767.98px) {
     height: 540px;
     padding-top: 3.5rem;
@@ -75,6 +75,11 @@
   $background: map.get($theme-map, "background");
   $primary: map.get($theme-map, "primary");
   $gray: map.get($theme-map, "gray");
+  .all.#{$name} {
+    @media (min-width: 768px) {
+      background-color: mix($background, $gray, 90%);
+    }
+  }
   .btnGroup.#{$name} a {
     color: $foreground;
     &.active {

@@ -6,7 +6,7 @@ import { getThemeClassName } from "../lib/utils";
 
 export default function LeftPanel(props) {
   return (
-    <div className={`${styles.all}`}>
+    <div className={`${styles.all} ${getThemeClassName(styles, props.dark)}`}>
       <div className={`text-center pb-3 ${styles.infoContainer}`}>
         <div>
           <Image src="/avatar.jpg" width={100} height={100} alt="joulev"
