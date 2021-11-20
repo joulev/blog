@@ -8,11 +8,11 @@ export default function ArticleCard({ dark, name, title, time, plain, tag }) {
     <div className="card mb-4">
       <div className="card-body">
         <Link href={`/posts/${name}`}>
-          <a className="h5 card-title">{title}</a>
+          <a className="h4 card-title">{title}</a>
         </Link>
-        <h6 className="small card-subtitle mt-1 mb-3 text-muted">
+        <div className="card-subtitle mt-1 mb-3 text-muted">
           <Date time={time} />
-        </h6>
+        </div>
         <p className="card-text">{truncatePlainContent(plain)}</p>
         <TagList dark={dark} tags={tag} />
       </div>

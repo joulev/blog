@@ -12,7 +12,7 @@ export default function Content(props) {
     return (
       <div>
         <h1>{props.data.title}</h1>
-        <div className="mt-3 fs-5 text-muted"><Date time={props.data.time} /></div>
+        <div className="mt-3 fs-4 text-muted"><Date time={props.data.time} /></div>
         <div className="mt-2"><TagList dark={props.dark} tags={props.data.tag} /></div>
         <div dangerouslySetInnerHTML={{ __html: props.content }} />
       </div>
