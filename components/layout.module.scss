@@ -18,13 +18,15 @@
   padding: 7px;
   border-radius: $border-radius;
   z-index: 300;
-  display: none;
-  @media (max-width: 767.98px) {
-    display: block;
-  }
   > svg > line {
     stroke-width: 2px;
     stroke-linecap: round;
+  }
+  &.toggle, &.homeBtn {
+    display: none;
+    @media (max-width: 767.98px) {
+      display: block;
+    }
   }
 }
 .toggle {
@@ -36,6 +38,15 @@
   position: fixed;
   top: 15px;
   right: 70px;
+}
+.toTop {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  &.notDownEnough {
+    opacity: 0;
+    cursor: initial;
+  }
 }
 
 @media (max-width: 767.98px) {

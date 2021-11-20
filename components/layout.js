@@ -84,6 +84,18 @@ export default function Layout(props) {
           </svg>
         </div>
       </Link>
+      <div className={`${styles.topBtns}
+        ${downEnough ? styles.downEnough : styles.notDownEnough}
+        ${styles.toTop} ${getThemeClassName(styles, props.dark)}`}
+        onClick={() => {
+          if (downEnough) window.scrollTo({ top: 0, behavior: "smooth" });
+        }}>
+        <svg width="24" height="24">
+          <line x1="12" y1="2" x2="12" y2="20" />
+          <line x1="12" y1="2" x2= "3" y2="11" />
+          <line x1="12" y1="2" x2="21" y2="11" />
+        </svg>
+      </div>
     </div>
   </>;
 }
