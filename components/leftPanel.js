@@ -7,13 +7,13 @@ import { getThemeClassName } from "../lib/utils";
 export default function LeftPanel(props) {
   return (
     <div className={`${styles.all}`}>
-      <div className={`text-center pb-4 ${styles.infoContainer}`}>
-        <div className={styles.avatarContainer}>
+      <div className={`text-center pb-3 ${styles.infoContainer}`}>
+        <div>
           <Image src="/avatar.jpg" width={100} height={100} alt="joulev"
             className={`${styles.avatar} ${getThemeClassName(styles, props.dark)}`}/>
         </div>
         <div>
-          <h3 className="mt-2 mb-1">Vu Van Dung</h3>
+          <h3>Vu Van Dung</h3>
           <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-muted">@joulev</a>
         </div>
       </div>

@@ -12,16 +12,31 @@
     padding-top: 3.5rem;
   }
   .infoContainer {
+    * {
+      margin: 0;
+    }
+    @media (max-height: 480px) {
+      div:first-of-type { display: none; }
+      @media (min-width: 996px) {
+        display: flex;
+        gap: 1rem;
+        div:first-of-type {
+          display: block;
+          width: 80px;
+        }
+        div:last-of-type {
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
     @media (max-height: 400px) {
       display: none;
     }
-    .avatarContainer {
-      @media (max-height: 500px) {
-        display: none;
-      }
-      .avatar {
-        border-radius: 50%;
-      }
+    .avatar {
+      border-radius: 50%;
     }
   }
   .btnGroup {
