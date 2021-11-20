@@ -28,24 +28,16 @@ export default function Search(props) {
     return "";
   };
   const [query, setQuery] = useState("");
-  const [stillTyping, setStillTyping] = useState(true);
-  const [currentTimeout, setCurrentTimeout] = useState(null);
   const [postsFiltered, setPostsFiltered] = useState([]);
   useEffect(() => {
     const q = getQuery();
     setQuery(q);
     setPostsFiltered(filterPosts(props.posts, q));
-    setStillTyping(false);
   }, [props.posts]);
   const updateQuery = query => {
     setQuery(query);
     router.push(query === "" ? "/search" : `/search?q=${encodeURIComponent(query)}`, undefined, { shallow: true });
-    clearTimeout(currentTimeout);
-    setStillTyping(true);
-    setCurrentTimeout(setTimeout(() => {
-      setStillTyping(false);
-      setPostsFiltered(filterPosts(props.posts, query));
-    }, 500));
+    setPostsFiltered(filterPosts(props.posts, query));
   };
   return <Layout dark={props.dark} changeMode={props.changeMode} versionInfo={props.versionInfo}
     title="Search" postPage={false} data={{}} activeLink={3}>
@@ -54,23 +46,18 @@ export default function Search(props) {
       const parsedQuery = parseSearchQuery(query);
       if (parsedQuery.tags.length === 0 && parsedQuery.words.length === 0)
         return <SearchPlaceholder dark={props.dark} type="guide" />;
-      if (stillTyping) return <SearchPlaceholder dark={props.dark} type="searching" />;
       if (postsFiltered.length === 0)
-        return (
-          <>
+        return <>
           <SearchPlaceholder dark={props.dark} type="not found" />
           <SearchPlaceholder dark={props.dark} type="guide" />
-          </>
-        );
-      return (
-        <>
+        </>;
+      return <>
         <p><em>Found {postsFiltered.length} result{postsFiltered.length != 1 && "s"}</em></p>
         {postsFiltered.map(post => (
           <ArticleCard dark={props.dark} key={post.name} name={post.name} title={post.title}
             time={post.time} plain={post.plain} tag={post.tag} />
         ))}
-        </>
-      );
+      </>;
     })()}
   </Layout>;
 }

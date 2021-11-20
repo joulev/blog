@@ -1,25 +1,15 @@
-import styles from "./searchingPlaceholder.module.scss";
 import Tag from "./tag";
 
 export default function SearchPlaceholder({ dark, type }) {
-  if (type === "searching")
-    return (
-      <div className="pt-5 text-center">
-        <div className={`spinner-border mb-3 ${styles.largeSpinner}`} role="status" />
-        <div className="fs-3">searching...</div>
-      </div>
-    );
   if (type === "not found")
-    return (
-      <>
+    return <>
       <div>
         <h1>Not found</h1>
         <p>Your first query did not give any results.</p>
       </div>
       <hr />
-      </>
-    );
-  if (type == "guide") {
+    </>;
+  if (type == "guide")
     return (
       <div className="small text-muted">
         <ul>
@@ -42,8 +32,7 @@ export default function SearchPlaceholder({ dark, type }) {
           </li>
         </ul>
       </div>
-    )
-  }
+    );
   return (
     <div>
       You should not see this text. If this text appears, please report to {" "}
