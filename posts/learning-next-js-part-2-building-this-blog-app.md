@@ -158,6 +158,13 @@ Since the transition only takes 0.3 seconds, I think I'll just call it
 
 ### Only search when user stops typing
 
+> **Update 20 November 2021:** This feature has been *removed*. After using the
+> search box a couple of times myself, I found that the spinner appearing for
+> 500ms does take a significant hit to user experience. I value user experience
+> more than their computers, that's why I removed this. After all this shouldn't
+> burn any computers except those who use extremely RAM-hungry browsers or old
+> computers like mine.
+
 Although searching algorithms were pretty straightforward &ndash; it just boils
 down to searching for strings inside another string, the searching function
 might take some time when the number of articles grows larger. I don't want to
