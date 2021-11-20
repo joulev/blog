@@ -29,7 +29,7 @@ export default function Layout(props) {
     <Head>
       <title>{props.title} - joulev's blog</title>
     </Head>
-    <div className="container">
+    <div className={`container ${styles.container}`}>
       <div className="row">
         <CSSTransition in={!sideBarHidden} timeout={600}
           classNames={{
