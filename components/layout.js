@@ -28,7 +28,7 @@ export default function Layout(props) {
   }, []);
   return <>
     <Head>
-      <title>{props.title} - joulev's blog</title>
+      <title>{props.title} &ndash; joulev's blog</title>
     </Head>
     <div className={`container ${styles.container}`}>
       <div className="row">
