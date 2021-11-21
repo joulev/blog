@@ -7,7 +7,6 @@
   margin-bottom: 1rem;
   padding: .5 1rem;
   min-height: 0;
-  &, &:focus, &:active { box-shadow: none; }
 }
 
 @mixin manage-theme($name, $theme-map) {
