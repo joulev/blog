@@ -49,6 +49,30 @@ body {
         text-underline-position: under;
       }
     }
+    .heading-container {
+      position: relative;
+      padding-top: 2.5rem;
+      + .heading-container {
+        padding-top: 0;
+      }
+      .heading-anchor {
+        display: block;
+        visibility: hidden;
+        position: absolute;
+        left: -2rem;
+        bottom: 0;
+        padding-left: .5rem;
+        width: 2.5rem; // a hack, but it works so...
+        font-size: 1.25rem;
+        opacity: 0;
+        transition: opacity .15s ease-in-out;
+      }
+      &:hover .heading-anchor, .heading-anchor:hover {
+        visibility: visible;
+        opacity: 1;
+        a { text-decoration: none; }
+      }
+    }
     .card {
       background: $background;
       color: $foreground;
