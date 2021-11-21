@@ -24,6 +24,7 @@ body {
     background-color: $background;
     color: $foreground;
     :not(pre) > code { color: $code }
+    a > code { color: inherit; }
     .btn-primary {
       background: $primary;
       color: white;
