@@ -45,6 +45,7 @@ body {
       &:hover {
         color: mix($primary, $foreground, $weight: 60%);
         text-decoration: underline;
+        text-underline-position: under;
       }
     }
     .card {
