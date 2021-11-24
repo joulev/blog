@@ -23,6 +23,11 @@
     font-size: small;
     @apply text-secondary-light dark:text-secondary-dark;
   }
+  a code {
+    @apply
+      text-primary-600 hover:text-primary-700
+      dark:text-primary-400 dark:hover:text-primary-300 !important;
+  }
   h1 { @apply text-4xl  mb-6; }
   h2 { @apply text-3xl  mb-6 mt-10 font-bold; }
   h3 { @apply text-2xl  mb-6 mt-10 font-bold; }

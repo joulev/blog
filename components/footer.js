@@ -10,7 +10,7 @@ export default function Footer({ versionInfo }) {
       <div className="mb-2">
         Commit&nbsp;
         <a href={`https://github.com/joulev/blog/commit/${versionInfo.hash}`} target="_blank" rel="noreferrer">
-          <code className="text-primary-600 dark:text-primary-400">{versionInfo.hash}</code>
+          <code>{versionInfo.hash}</code>
         </a>{" "}
         (<time dateTime={versionInfo.time} title={moment(versionInfo.time).toISOString(false)}>
           {moment(versionInfo.time).format("HH:mm:ss")}&nbsp;{moment(versionInfo.time).format("D/MM/y")}
