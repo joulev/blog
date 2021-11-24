@@ -10,18 +10,18 @@ export default function Layout() {
       <div className="
         px-4 pt-10 bg-gray-200 dark:bg-gray-800
         fixed top-0 inset-x-0
-        md:h-screen md:sticky md:inset-y-0
+        md:h-screen md:sticky md:inset-y-0 md:mx-8
       ">
         <Sidebar />
       </div>
       <div className="
-        md:col-span-2 md:px-8 py-10
+        md:col-span-2 md:mx-8 py-10
       ">
         <Lipsum long />
       </div>
     </div>
     <div className="bg-gray-200 dark:bg-gray-800">
-      <div className="max-w-md sm:max-w-lg md:hidden mx-auto px-8">
+      <div className="max-w-md sm:max-w-lg md:hidden mx-auto px-8 py-8">
         Hello world
       </div>
     </div>
