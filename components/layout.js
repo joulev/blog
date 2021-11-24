@@ -1,4 +1,5 @@
 import Lipsum from "./lipsum";
+import Sidebar from "./sidebar";
 
 export default function Layout() {
   return <>
@@ -8,11 +9,12 @@ export default function Layout() {
     ">
       <div className="
         hidden md:block px-4 bg-gray-200 dark:bg-gray-800
+        pt-10
       ">
-        <Lipsum />
+        <Sidebar />
       </div>
       <div className="
-        md:col-span-2 md:px-8
+        md:col-span-2 md:px-8 py-10
       ">
         <Lipsum long />
       </div>
