@@ -9,7 +9,7 @@ export default function SearchPlaceholder({ type }) {
         <h1>Not found</h1>
         <p>Your first query did not give any results.</p>
       </div>
-      <hr className="my-5 border-gray-300 dark:border-gray-700" />
+      <hr />
     </>;
   if (type === "guide")
     return (

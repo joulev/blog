@@ -31,4 +31,5 @@
   h6 { @apply text-base mb-6 mt-10 font-bold; }
   h2 + *, h3 + *, h4 + *, h5 + *, h6 + * { @apply mt-0; }
   p { @apply mb-6; }
+  hr { @apply my-5 border-gray-400 dark:border-gray-600; }
 }
