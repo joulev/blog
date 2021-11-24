@@ -12,12 +12,15 @@
 }
 
 @layer components {
+  * {
+    @apply transition-all;
+  }
   a {
     @apply
       transition
       text-primary-600 hover:text-primary-700
       dark:text-primary-400 dark:hover:text-primary-300
-      hover:underline hover:underline-under
+      hover:underline hover:underline-under;
   }
   code {
     font-size: small;
