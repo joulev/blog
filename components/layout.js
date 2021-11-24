@@ -2,7 +2,7 @@ import Footer from "./footer";
 import Lipsum from "./lipsum";
 import Sidebar from "./sidebar";
 
-export default function Layout() {
+export default function Layout({ dark, changeMode }) {
   return <>
     <div className="
       max-w-md sm:max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-8 md:px-0
@@ -13,7 +13,7 @@ export default function Layout() {
         fixed top-0 inset-x-0
         md:h-screen md:sticky md:inset-y-0 md:mx-8
       ">
-        <Sidebar />
+        <Sidebar dark={dark} changeMode={changeMode} />
       </div>
       <div className="
         md:col-span-2 md:mx-8 py-10
