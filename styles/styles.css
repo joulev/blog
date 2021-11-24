@@ -20,8 +20,7 @@
       hover:underline hover:underline-under;
   }
   code {
-    font-size: small;
-    @apply text-secondary-light dark:text-secondary-dark;
+    @apply text-sm text-secondary-light dark:text-secondary-dark;
   }
   a code {
     @apply
