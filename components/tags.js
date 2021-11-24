@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Tags({ tags }) {
   return <>
     <div className="flex gap-2">
-      {tags.split(" ").map(tag => <Link href={`/tags/${tag}`}>
+      {tags.split(" ").map(tag => <Link href={`/tags/${tag}`} key={tag}>
         <a className="
           rounded px-1.5 py-0.5 no-underline
           bg-primary-100 text-primary-600
