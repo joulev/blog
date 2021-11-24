@@ -8,7 +8,7 @@ export default function SidebarInfo() {
           className="rounded-full border-primary-500 border-2 border-solid" />
       </div>
       <div>
-        <p className="text-2xl font-bold">Vu Van Dung</p>
+        <div className="text-2xl font-bold">Vu Van Dung</div>
         <a href="https://github.com/joulev" target="_blank" rel="noreferrer" className="text-gray-500">
           @joulev
         </a>

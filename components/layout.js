@@ -12,13 +12,13 @@ export default function Layout({ dark, changeMode, title, sideLink, children }) 
       grid md:grid-cols-3
     ">
       <div className="
-        px-4 pt-10 bg-gray-200 dark:bg-gray-800
+        px-4 pt-14 bg-gray-200 dark:bg-gray-800
         fixed top-0 inset-x-0
         md:h-screen md:sticky md:inset-y-0 md:mx-8
       ">
         <Sidebar dark={dark} changeMode={changeMode} sideLink={sideLink} />
       </div>
-      <div className="md:col-span-2 md:mx-8 py-10">
+      <div className="md:col-span-2 md:mx-8 py-14">
         {children}
       </div>
     </div>

@@ -12,9 +12,7 @@
 }
 
 @layer components {
-  * {
-    @apply transition;
-  }
+  * { @apply transition; }
   a {
     @apply
       text-primary-600 hover:text-primary-700
@@ -24,4 +22,12 @@
   code {
     font-size: small;
   }
+  h1 { @apply text-5xl mb-6; }
+  h2 { @apply text-4xl mb-6 mt-10 font-bold; }
+  h3 { @apply text-3xl mb-6 mt-10 font-bold; }
+  h4 { @apply text-2xl mb-6 mt-10 font-bold; }
+  h5 { @apply text-xl  mb-6 mt-10 font-bold; }
+  h6 { @apply text-lg  mb-6 mt-10 font-bold; }
+  h2 + *, h3 + *, h4 + *, h5 + *, h6 + * { @apply mt-0; }
+  p { @apply mb-6; }
 }
