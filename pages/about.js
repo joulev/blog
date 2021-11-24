@@ -1,8 +1,15 @@
 import Layout from "../components/layout";
+import getCommitInfo from "../lib/getCommitInfo";
 
-export default function Home({ dark, changeMode }) {
+export function getStaticProps() {
+  const versionInfo = getCommitInfo();
+  return { props: { versionInfo } }
+}
+
+export default function Home({ dark, changeMode, versionInfo }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} title="About me" sideLink={2}>
+    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
+      title="About me" sideLink={2}>
       <h1>About me</h1>
       <p>Hello. I am Dung. A Computer Engineering student in the National University of Singapore.</p>
       <p>

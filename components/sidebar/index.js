@@ -3,7 +3,7 @@ import SidebarDarkToggler from "./darkmode";
 import SidebarInfo from "./info";
 import SidebarNavlink from "./navlink";
 
-export default function Sidebar({ dark, changeMode, sideLink }) {
+export default function Sidebar({ dark, changeMode, versionInfo, sideLink }) {
   return <>
     <SidebarInfo />
     <SidebarNavlink active={sideLink} />
@@ -12,7 +12,7 @@ export default function Sidebar({ dark, changeMode, sideLink }) {
     </div>
     <div className="absolute bottom-4 hidden md:block">
       <SidebarDarkToggler dark={dark} changeMode={changeMode} />
-      <Footer className="" />
+      <Footer versionInfo={versionInfo} />
     </div>
   </>;
 }
