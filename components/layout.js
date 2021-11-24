@@ -1,3 +1,4 @@
+import Footer from "./footer";
 import Lipsum from "./lipsum";
 import Sidebar from "./sidebar";
 
@@ -22,7 +23,7 @@ export default function Layout() {
     </div>
     <div className="bg-gray-200 dark:bg-gray-800">
       <div className="max-w-md sm:max-w-lg md:hidden mx-auto px-8 py-8">
-        Hello world
+        <Footer className={null} />
       </div>
     </div>
   </>;
