@@ -1,3 +1,5 @@
+import Markdown from "markdown-to-jsx";
+import LinkBtn from "../../components/linkBtn";
 import Layout from "../../components/layout";
 import TagList from "../../components/tags/tagList";
 import Date from "../../components/date";
@@ -30,7 +32,11 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
       <h1>{post.data.title}</h1>
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
       <div className="mt-2"><TagList tags={post.data.tag} /></div>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <Markdown children={post.content} options={{
+        overrides: {
+          LinkBtn: { component: LinkBtn }
+        }
+      }} />
     </Layout>
   </>;
 }

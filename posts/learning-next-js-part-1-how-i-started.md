@@ -121,3 +121,9 @@ And to build the blog app, which is the same web app you are seeing right now,
 I had to go around the tutorial again several time.
 
 Shouldn't copy and paste anything from now onwards.
+
+---
+
+You can read part 2 of this article here:
+
+<LinkBtn href="/posts/learning-next-js-part-2-building-this-blog-app" text="Go to Part 2" />

@@ -273,3 +273,9 @@ yet. That's how good Next.js is, as I currently perceive it to be.
 
 Probably it will be the default format for all new sites that I build from now
 on.
+
+---
+
+You can read part 1 of this article here:
+
+<LinkBtn href="/posts/learning-next-js-part-1-how-i-started" text="Go to Part 1" />
