@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import ArticleCard from "../../components/articleCard";
 import { getTagInformation, getTags } from "../../lib/getTags";
-import BigTag from "../../components/bigTag";
+import Tag from "../../components/tags/tag";
 import getCommitInfo from "../../lib/getCommitInfo";
 
 export function getStaticPaths() {
@@ -29,7 +29,7 @@ export default function TagPage({ dark, changeMode, versionInfo, tag, descriptio
   return <>
     <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
       title={`Tag [${tag}]`} sideLink={0}>
-      <BigTag tag={tag} />
+      <Tag tag={tag} big />
       <p className={description === "(no description)" ? "text-gray-500" : ""}>{description}</p>
       {posts.map(post => <ArticleCard post={post} key={post.name} />)}
     </Layout>

@@ -1,3 +1,5 @@
+import Tag from "../tags/tag";
+
 const liStyles = "mb-2 ml-4";
 
 export default function SearchPlaceholder({ type }) {
@@ -15,7 +17,7 @@ export default function SearchPlaceholder({ type }) {
         <ul className="list-disc">
           <li className={liStyles}>
             You can search for tags with the <code>tag:</code> keyword. For example,
-            you can search for tag [cs1010] with <code>tag:cs1010</code>.
+            you can search for tag <Tag tag="web" /> with <code>tag:web</code>.
           </li>
           <li className={liStyles}>
             While posts do not have to match all words in the query to be matched,

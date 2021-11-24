@@ -1,6 +1,6 @@
 import { truncatePlainContent } from "../lib/utils";
 import Date from "./date";
-import Tags from "./tags";
+import TagList from "./tags/tagList";
 
 export default function ArticleCard({ post }) {
   return <>
@@ -11,7 +11,7 @@ export default function ArticleCard({ post }) {
       <div className="text-xl font-bold"><a href={`/posts/${post.name}`}>{post.title}</a></div>
       <div className="text-md text-gray-500"><Date time={post.time} /></div>
       <div className="my-4">{truncatePlainContent(post.plain)}</div>
-      <Tags tags={post.tag} />
+      <TagList tags={post.tag} />
     </div>
   </>;
 }
