@@ -21,6 +21,7 @@
   }
   code {
     font-size: small;
+    @apply text-secondary-light dark:text-secondary-dark;
   }
   h1 { @apply text-5xl mb-6; }
   h2 { @apply text-4xl mb-6 mt-10 font-bold; }
