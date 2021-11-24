@@ -2,7 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Sidebar from "./sidebar";
 
-export default function Layout({ dark, changeMode, title, children }) {
+export default function Layout({ dark, changeMode, title, sideLink, children }) {
   return <>
     <Head>
       <title>{title} – joulev's blog</title>
@@ -16,7 +16,7 @@ export default function Layout({ dark, changeMode, title, children }) {
         fixed top-0 inset-x-0
         md:h-screen md:sticky md:inset-y-0 md:mx-8
       ">
-        <Sidebar dark={dark} changeMode={changeMode} />
+        <Sidebar dark={dark} changeMode={changeMode} sideLink={sideLink} />
       </div>
       <div className="md:col-span-2 md:mx-8 py-10">
         {children}

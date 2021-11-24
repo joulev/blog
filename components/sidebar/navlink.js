@@ -1,3 +1,4 @@
+import Link from "next/link";
 import css from "./navlink.module.css";
 
 const navlinkStyles = "\
@@ -10,9 +11,9 @@ const activeStyles = "\
 export default function SidebarNavlink({ active }) {
   return <>
     <div className="flex flex-col gap-2 mb-5">
-      <a href="#" className={`${navlinkStyles} ${css.navlink} ${active === 1 ? activeStyles : ""}`}>Home</a>
-      <a href="#" className={`${navlinkStyles} ${css.navlink} ${active === 2 ? activeStyles : ""}`}>About me</a>
-      <a href="#" className={`${navlinkStyles} ${css.navlink} ${active === 3 ? activeStyles : ""}`}>Search</a>
+      <Link href="/"      ><a className={`${navlinkStyles} ${css.navlink} ${active === 1 ? activeStyles : ""}`}>Home</a></Link>
+      <Link href="/about" ><a className={`${navlinkStyles} ${css.navlink} ${active === 2 ? activeStyles : ""}`}>About me</a></Link>
+      <Link href="/search"><a className={`${navlinkStyles} ${css.navlink} ${active === 3 ? activeStyles : ""}`}>Search</a></Link>
     </div>
   </>;
 }
