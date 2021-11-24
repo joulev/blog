@@ -5,7 +5,7 @@ import SidebarNavlink from "./navlink";
 export default function Sidebar() {
   return <>
     <SidebarInfo />
-    <SidebarNavlink active={2} />
+    <SidebarNavlink active={1} />
     <Footer className="hidden md:block absolute bottom-4" />
   </>;
 }
