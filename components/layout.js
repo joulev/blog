@@ -8,8 +8,9 @@ export default function Layout() {
       grid md:grid-cols-3
     ">
       <div className="
-        hidden md:block px-4 pt-10 bg-gray-200 dark:bg-gray-800
-        md:h-screen sticky inset-y-0
+        px-4 pt-10 bg-gray-200 dark:bg-gray-800
+        fixed top-0 inset-x-0
+        md:h-screen md:sticky md:inset-y-0
       ">
         <Sidebar />
       </div>
