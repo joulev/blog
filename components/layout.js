@@ -9,7 +9,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
     </Head>
     <div className="
       max-w-md sm:max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-8 md:px-0
-      grid md:grid-cols-3
+      md:grid md:grid-cols-3
     ">
       <div className="
         hidden fixed top-0 inset-x-0 px-4 pt-14 bg-gray-200 dark:bg-gray-800
