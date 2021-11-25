@@ -1,7 +1,8 @@
 import Markdown from "markdown-to-jsx";
 import Layout from "../../components/layout";
 import LinkBtn from "../../components/linkBtn";
-import PreBlock from "../../components/preBlock";
+import PreBlock from "../../components/posts/preBlock";
+import ArticleLink from "../../components/posts/articleLink";
 import TagList from "../../components/tags/tagList";
 import Date from "../../components/date";
 import { listPosts, getPostContent } from "../../lib/getPosts";
@@ -37,7 +38,8 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
         namedCodesToUnicode: { ndash: "–" },
         overrides: {
           LinkBtn: { component: LinkBtn },
-          pre: { component: PreBlock, props: { dark } }
+          pre: { component: PreBlock, props: { dark } },
+          a: { component: ArticleLink }
         }
       }} />
     </Layout>

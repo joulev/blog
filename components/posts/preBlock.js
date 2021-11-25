@@ -1,5 +1,5 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { monokaiDark, monokaiLight } from "../lib/monokai";
+import { monokaiDark, monokaiLight } from "../../lib/monokai";
 
 // Based on https://stackoverflow.com/a/68179028/12419999
 function CodeBlock({ className, children, dark }) {
