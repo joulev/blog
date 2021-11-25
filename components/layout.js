@@ -12,8 +12,9 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
       md:grid md:grid-cols-3
     ">
       <div className="
-        hidden fixed top-0 inset-x-0 px-4 pt-14 bg-gray-200 dark:bg-gray-800
-        md:block md:h-screen md:sticky md:inset-y-0 md:mx-8
+        fixed top-0 inset-x-0 px-4 z-40 shadow-xl overflow-hidden
+        bg-gray-200 dark:bg-gray-800
+        md:h-screen md:sticky md:inset-y-0 md:mx-8 md:shadow-none
       ">
         <Sidebar dark={dark} changeMode={changeMode} versionInfo={versionInfo} sideLink={sideLink} />
       </div>
