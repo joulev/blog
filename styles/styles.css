@@ -45,3 +45,7 @@
   }
   blockquote p:last-of-type { @apply mb-0; }
 }
+
+html {
+  scroll-behavior: smooth;
+}
