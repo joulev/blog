@@ -34,7 +34,7 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
       title={post.data.title} activeLink={0}>
       <h1>{post.data.title}</h1>
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
-      <div className="mt-2"><TagList tags={post.data.tag} /></div>
+      <div className="mt-2 mb-6"><TagList tags={post.data.tag} /></div>
       <Markdown children={post.content} options={{
         namedCodesToUnicode: { ndash: "–" },
         overrides: {
