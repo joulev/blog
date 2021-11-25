@@ -9,6 +9,10 @@ module.exports = {
       "mono": ['"Meslo LG S"'],
     },
     extend: {
+      screens: {
+        "h-sm": {"raw": "(min-height: 450px)"},
+        "h-md": {"raw": "(min-height: 580px)"}
+      },
       colors: {
         gray: {
           100: "#fcfcfa", // bg light
