@@ -33,6 +33,7 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
       <div className="mt-2"><TagList tags={post.data.tag} /></div>
       <Markdown children={post.content} options={{
+        namedCodesToUnicode: { ndash: "–" },
         overrides: {
           LinkBtn: { component: LinkBtn }
         }
