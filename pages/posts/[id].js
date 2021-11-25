@@ -3,6 +3,7 @@ import Layout from "../../components/layout";
 import LinkBtn from "../../components/linkBtn";
 import PreBlock from "../../components/posts/preBlock";
 import ArticleLink from "../../components/posts/articleLink";
+import Heading from "../../components/posts/heading";
 import TagList from "../../components/tags/tagList";
 import Date from "../../components/date";
 import { listPosts, getPostContent } from "../../lib/getPosts";
@@ -39,7 +40,12 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
         overrides: {
           LinkBtn: { component: LinkBtn },
           pre: { component: PreBlock, props: { dark } },
-          a: { component: ArticleLink }
+          a: { component: ArticleLink },
+          h2: { component: Heading, props: { level: 2 } },
+          h3: { component: Heading, props: { level: 3 } },
+          h4: { component: Heading, props: { level: 4 } },
+          h5: { component: Heading, props: { level: 5 } },
+          h6: { component: Heading, props: { level: 6 } },
         }
       }} />
     </Layout>
