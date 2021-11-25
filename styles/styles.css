@@ -21,11 +21,8 @@
   }
   code { @apply text-sm; }
   :not(pre) > code { @apply text-secondary-light dark:text-secondary-dark; }
-  a code {
-    @apply
-      text-primary-600 hover:text-primary-700
-      dark:text-primary-400 dark:hover:text-primary-300 !important;
-  }
+  a code { @apply text-primary-600 dark:text-primary-400 !important; }
+  a:hover code { @apply text-primary-700 dark:text-primary-300 !important; }
   pre {
     @apply max-w-full overflow-x-auto mb-5;
   }
