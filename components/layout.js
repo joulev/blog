@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Footer from "./footer";
@@ -6,9 +7,17 @@ import Sidebar from "./sidebar";
 const floatingBtnStyles = "\
   fixed p-2 z-50 bg-gray-200 dark:bg-gray-800 \
   border border-solid rounded border-gray-400 dark:border-gray-600 \
-  cursor-pointer hover:border-gray-500 dark:hover:border-gray-500 transition";
+  hover:border-gray-500 dark:hover:border-gray-500 transition";
 
 export default function Layout({ dark, changeMode, versionInfo, title, sideLink, children }) {
+  const [downEnough, setDownEnough] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const onScroll = () => {
+    if (window.scrollY < 30) setDownEnough(false); else setDownEnough(true);
+  };
   return <>
     <Head>
       <title>{title} – joulev's blog</title>
@@ -51,7 +60,8 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         </svg>
       </div>
     </Link>
-    <div className={`${floatingBtnStyles} bottom-6 right-6`}>
+    <div className={`${floatingBtnStyles} bottom-6 right-6 ${downEnough ? "opacity-100 cursor-pointer" : "opacity-0"}`}
+      onClick={() => {if (downEnough) window.scrollTo({ top: 0, behavior: "smooth" });}}>
       <svg width="24" height="24">
         <line x1="12" y1="2" x2="12" y2="20" className="stroke-current stroke-2 cap-round" />
         <line x1="12" y1="2" x2= "3" y2="11" className="stroke-current stroke-2 cap-round" />
