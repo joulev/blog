@@ -35,7 +35,7 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
       <h1>{post.data.title}</h1>
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
       <div className="mt-2 mb-6"><TagList tags={post.data.tag} /></div>
-      <Markdown children={post.content} options={{
+      <Markdown options={{
         namedCodesToUnicode: { ndash: "–" },
         overrides: {
           LinkBtn: { component: LinkBtn },
@@ -47,7 +47,9 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
           h5: { component: Heading, props: { level: 5 } },
           h6: { component: Heading, props: { level: 6 } },
         }
-      }} />
+      }}>
+        {post.content}
+      </Markdown>
     </Layout>
   </>;
 }

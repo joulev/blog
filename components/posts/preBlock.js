@@ -5,7 +5,11 @@ import { monokaiDark, monokaiLight } from "../../lib/monokai";
 function CodeBlock({ className, children, dark }) {
   let lang = "text"; // default monospaced text
   if (className && className.startsWith("lang-")) lang = className.replace("lang-", "");
-  return <SyntaxHighlighter language={lang} style={dark ? monokaiDark : monokaiLight} children={children} />;
+  return <>
+    <SyntaxHighlighter language={lang} style={dark ? monokaiDark : monokaiLight}>
+      {children}
+    </SyntaxHighlighter>
+  </>;
 }
 
 export default function PreBlock({ children, dark, ...rest }) {
