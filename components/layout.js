@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Footer from "./footer";
 import Sidebar from "./sidebar";
+import css from "./layout.module.css";
 
 const floatingBtnStyles = "\
   fixed p-2 z-50 bg-gray-200 dark:bg-gray-800 \
@@ -48,8 +49,10 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
                                    : "border-opacity-0"}
       `} onClick={() => setNavbarShown(!navbarShown)}>
       <svg width="24" height="24">
-        <line x1="0" y1= "6" x2="24" y2= "6" className="stroke-current stroke-2 cap-round" />
-        <line x1="0" y1="18" x2="24" y2="18" className="stroke-current stroke-2 cap-round" />
+        <line x1="0" y1="6" x2="24" y2="6" className={`stroke-current stroke-2 cap-round transition-transform duration-300
+          ${navbarShown ? css.togglerFirst : ""}`} />
+        <line x1="0" y1="18" x2="24" y2="18" className={`stroke-current stroke-2 cap-round transition-transform duration-300
+          ${navbarShown ? css.togglerLast : ""}`} />
       </svg>
     </div>
     <Link href="/" passHref>

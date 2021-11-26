@@ -1,0 +1,2 @@
+.togglerFirst { transform: translate(12px, 12px) rotate(45deg) translate(-12px, -6px); }
+.togglerLast { transform: translate(12px, 12px) rotate(-45deg) translate(-12px, -18px); }
