@@ -44,7 +44,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         <Footer versionInfo={versionInfo} />
       </div>
     </div>
-    <div className={`fixed top-4 right-4 p-2 z-50 cursor-pointer rounded transition border border-solid
+    <div className={`fixed top-4 right-4 p-2 z-50 cursor-pointer rounded transition duration-300 border border-solid
       ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
                                    : "border-opacity-0"}
       `} onClick={() => setNavbarShown(!navbarShown)}>
@@ -56,7 +56,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
       </svg>
     </div>
     <Link href="/" passHref>
-      <div className={`fixed top-4 right-16 p-2 z-50 cursor-pointer rounded transition border border-solid
+      <div className={`fixed top-4 right-16 p-2 z-50 cursor-pointer rounded transition duration-300 border border-solid
         ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
                                      : "border-opacity-0"}
         `}>
