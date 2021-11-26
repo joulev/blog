@@ -27,7 +27,12 @@ export default function Heading({ level, children }) {
       <div className="
         invisible absolute -left-8 bottom-0 pl-2 w-10 text-xl opacity-0 transition-opacity
         hover:visible hover:opacity-100 group-hover:visible group-hover:opacity-100
-      "><a className="no-underline" href={`#${idText}`}>#</a></div>
+      ">
+        <div className="cursor-pointer text-gray-500 hover:text-gray-400 dark:hover:text-gray-600 transition"
+          onClick={() => document.querySelector(`#${idText}`).scrollIntoView({ behavior: "smooth" })}>
+          #
+        </div>
+      </div>
       <HeadingElement level={level}>{children[0]}</HeadingElement>
     </div>
   </>;

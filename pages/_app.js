@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import smoothscroll from "smoothscroll-polyfill";
 import "../styles/styles.css";
 
 export default function App({ Component, pageProps }) {
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }) {
       }
     }
     setDark(storedTheme ? storedTheme === "dark" : true);
+    smoothscroll.polyfill();
   }, []);
   useEffect(() => {
     if (dark) document.querySelector("html").classList.add("dark");
