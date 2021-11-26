@@ -16,13 +16,14 @@ export default function SearchPlaceholder({ type }) {
       <div className="text-sm text-gray-500">
         <ul className="list-disc">
           <li className={liStyles}>
-            You can search for tags with the <code>tag:</code> keyword. For example,
-            you can search for tag <Tag tag="web" /> with <code>tag:web</code>.
+            You can search for tags with the <code className="text-xs">tag:</code>{" "}
+            keyword. For example, you can search for tag <Tag tag="web" /> with{" "}
+            <code className="text-xs">tag:web</code>.
           </li>
           <li className={liStyles}>
             While posts do not have to match all words in the query to be matched,
-            if you use any <code>tag:</code> keywords in the query, posts have to
-            contain all of those keywords to be matched.
+            if you use any <code className="text-xs">tag:</code> keywords in the
+            query, posts have to contain all of those keywords to be matched.
           </li>
           <li className={liStyles}>
             This search engine does not take misspelling into account. Thus, to
