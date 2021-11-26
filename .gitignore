@@ -35,3 +35,6 @@ yarn-error.log*
 
 # personal settings
 .vscode
+
+# generator
+generator/post.md

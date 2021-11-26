@@ -1,8 +1,11 @@
 ---
 title: "Learning Next.js: Part 2: Building this blog app"
-tag: web nextjs react
+tag: web nextjs react js
 time: "2021-11-18T00:10:40.176+08:00"
 ---
+
+> After this post, [the site has been rewritten](/posts/learning-tailwind-css-a-major-rewrite-of-this-app),
+> so information here are no longer necessarily up-to-date.
 
 ## Summary
 

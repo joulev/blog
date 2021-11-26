@@ -1,6 +1,6 @@
 ---
 title: "Learning Next.js: Part 1: How I started"
-tag: web nextjs react
+tag: web nextjs react js
 time: "2021-11-17T17:32:51.091+08:00"
 ---
 
