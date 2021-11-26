@@ -47,7 +47,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
     <div className={`fixed top-4 right-4 p-2 z-50 cursor-pointer rounded transition duration-300 border border-solid
       ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
                                    : "border-opacity-0"}
-      md:hidden`} onClick={() => setNavbarShown(!navbarShown)}>
+      md:hidden active:bg-opacity-0`} onClick={() => setNavbarShown(!navbarShown)}>
       <svg width="24" height="24">
         <line x1="0" y1="6" x2="24" y2="6" className={`stroke-current stroke-2 cap-round transition-transform duration-300
           ${navbarShown ? css.togglerFirst : ""}`} />
@@ -59,7 +59,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
       <div className={`fixed top-4 right-16 p-2 z-50 cursor-pointer rounded transition duration-300 border border-solid
         ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
                                      : "border-opacity-0"}
-        md:hidden`}>
+        md:hidden active:bg-opacity-0`}>
         <svg width="24" height="24">
           <line x1= "6" y1="20" x2="18" y2="20" className="stroke-current stroke-2 cap-round" />
           <line x1= "6" y1="20" x2= "6" y2= "8" className="stroke-current stroke-2 cap-round" />
