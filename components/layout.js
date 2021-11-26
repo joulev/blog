@@ -29,7 +29,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
     ">
       <div className={`
         fixed top-0 inset-x-0 px-4 z-40 shadow-xl overflow-hidden bg-gray-200 dark:bg-gray-800
-        ${navbarShown ? "" : "h-0"}
+        ${navbarShown ? "h-112" : "h-0"} transition-all duration-300
         md:h-screen md:sticky md:inset-y-0 md:mx-8 md:shadow-none
       `}>
         <Sidebar dark={dark} changeMode={changeMode} versionInfo={versionInfo} sideLink={sideLink} />
