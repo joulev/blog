@@ -6,6 +6,8 @@
 @layer utilities {
   .cap-round { stroke-linecap: round; }
   .stroke-3 { stroke-width: 3px; }
+  .stroke-4 { stroke-width: 4px; }
+  .fill-none { fill: none; }
   .h-112 { height: 28rem; }
   @variants hover {
     .underline-under { text-underline-position: under; }
