@@ -43,15 +43,20 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         <Footer versionInfo={versionInfo} />
       </div>
     </div>
-    <div className={`${floatingBtnStyles} top-6 right-6 md:hidden`}
-      onClick={() => setNavbarShown(!navbarShown)}>
+    <div className={`fixed top-4 right-4 p-2 z-50 cursor-pointer rounded transition border border-solid
+      ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
+                                   : "border-opacity-0"}
+      `} onClick={() => setNavbarShown(!navbarShown)}>
       <svg width="24" height="24">
         <line x1="0" y1= "6" x2="24" y2= "6" className="stroke-current stroke-2 cap-round" />
         <line x1="0" y1="18" x2="24" y2="18" className="stroke-current stroke-2 cap-round" />
       </svg>
     </div>
     <Link href="/" passHref>
-      <div className={`${floatingBtnStyles} top-6 right-20 md:hidden`}>
+      <div className={`fixed top-4 right-16 p-2 z-50 cursor-pointer rounded transition border border-solid
+        ${downEnough && !navbarShown ? "bg-gray-200 dark:bg-gray-800 border-gray-400 dark:border-gray-600"
+                                     : "border-opacity-0"}
+        `}>
         <svg width="24" height="24">
           <line x1= "6" y1="20" x2="18" y2="20" className="stroke-current stroke-2 cap-round" />
           <line x1= "6" y1="20" x2= "6" y2= "8" className="stroke-current stroke-2 cap-round" />
@@ -62,7 +67,10 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         </svg>
       </div>
     </Link>
-    <div className={`${floatingBtnStyles} bottom-6 right-6 ${downEnough ? "opacity-100 cursor-pointer" : "opacity-0"}`}
+    <div className={`fixed bottom-6 right-6 p-2 z-50 bg-gray-200 dark:bg-gray-800
+      ${downEnough ? "opacity-100 cursor-pointer" : "opacity-0"}
+      border border-solid rounded border-gray-400 dark:border-gray-600
+    hover:border-gray-500 dark:hover:border-gray-500 transition`}
       onClick={() => {if (downEnough) window.scrollTo({ top: 0, behavior: "smooth" });}}>
       <svg width="24" height="24">
         <line x1="12" y1="2" x2="12" y2="20" className="stroke-current stroke-2 cap-round" />
