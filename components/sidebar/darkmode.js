@@ -1,8 +1,7 @@
 export default function SidebarDarkToggler({ dark, changeMode }) {
   return <>
     <label className="mb-5 flex items-center">
-      <input checked={dark} onChange={() => changeMode()} type="checkbox" role="switch"
-        className="appearance-none peer" />
+      <input checked={dark} onChange={() => changeMode()} type="checkbox" role="switch" className="hidden peer" />
       <span className="
         h-5 w-8 px-px mr-2 flex items-center rounded-full transition
         bg-gray-100 peer-checked:bg-primary-400
