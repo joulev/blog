@@ -5,11 +5,6 @@ import Footer from "./footer";
 import Sidebar from "./sidebar";
 import css from "./layout.module.css";
 
-const floatingBtnStyles = "\
-  fixed p-2 z-50 bg-gray-200 dark:bg-gray-800 \
-  border border-solid rounded border-gray-400 dark:border-gray-600 \
-  hover:border-gray-500 dark:hover:border-gray-500 transition";
-
 export default function Layout({ dark, changeMode, versionInfo, title, sideLink, children }) {
   const [downEnough, setDownEnough] = useState(false);
   const [navbarShown, setNavbarShown] = useState(false);
