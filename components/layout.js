@@ -11,6 +11,7 @@ const floatingBtnStyles = "\
 
 export default function Layout({ dark, changeMode, versionInfo, title, sideLink, children }) {
   const [downEnough, setDownEnough] = useState(false);
+  const [navbarShown, setNavbarShown] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,11 +27,11 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
       max-w-md sm:max-w-lg md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-8 md:px-0
       md:grid md:grid-cols-3
     ">
-      <div className="
-        fixed top-0 inset-x-0 px-4 z-40 shadow-xl overflow-hidden
-        bg-gray-200 dark:bg-gray-800
+      <div className={`
+        fixed top-0 inset-x-0 px-4 z-40 shadow-xl overflow-hidden bg-gray-200 dark:bg-gray-800
+        ${navbarShown ? "" : "h-0"}
         md:h-screen md:sticky md:inset-y-0 md:mx-8 md:shadow-none
-      ">
+      `}>
         <Sidebar dark={dark} changeMode={changeMode} versionInfo={versionInfo} sideLink={sideLink} />
       </div>
       <div className="md:col-span-2 md:mx-8 py-14">
@@ -42,7 +43,8 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         <Footer versionInfo={versionInfo} />
       </div>
     </div>
-    <div className={`${floatingBtnStyles} top-6 right-6 md:hidden`}>
+    <div className={`${floatingBtnStyles} top-6 right-6 md:hidden`}
+      onClick={() => setNavbarShown(!navbarShown)}>
       <svg width="24" height="24">
         <line x1="0" y1= "6" x2="24" y2= "6" className="stroke-current stroke-2 cap-round" />
         <line x1="0" y1="18" x2="24" y2="18" className="stroke-current stroke-2 cap-round" />
