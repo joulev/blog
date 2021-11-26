@@ -9,6 +9,7 @@
   .stroke-4 { stroke-width: 4px; }
   .fill-none { fill: none; }
   .h-112 { height: 28rem; }
+  .border-l-6 { border-left-width: 6px; }
   @variants hover {
     .underline-under { text-underline-position: under; }
   }
@@ -40,8 +41,8 @@
   hr { @apply my-5 border-gray-400 dark:border-gray-600; }
   blockquote {
     @apply
-      p-4 mb-5 border-l-4 border-solid rounded border-gray-700 dark:border-gray-300
-      bg-gray-300 dark:bg-gray-700
+      p-4 mb-5 border-l-6 border-solid rounded border-gray-500
+      bg-gray-200 dark:bg-gray-800
   }
   blockquote p:last-of-type { @apply mb-0; }
 }
