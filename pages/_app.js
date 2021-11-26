@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import smoothscroll from "smoothscroll-polyfill";
+import Loading from "../components/loading";
 import "../styles/styles.css";
 
 export default function App({ Component, pageProps }) {
+  const [loaded, setLoaded] = useState(false);
+  const router = useRouter();
+  useEffect(() => setLoaded(router.isReady), [router]);
   const [dark, setDark] = useState(false);
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -19,5 +24,5 @@ export default function App({ Component, pageProps }) {
     else document.querySelector("html").classList.remove("dark");
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
-  return <Component dark={dark} changeMode={() => setDark(!dark)} {...pageProps} />;
+  return loaded ? <Component dark={dark} changeMode={() => setDark(!dark)} {...pageProps} /> : <Loading />;
 }
