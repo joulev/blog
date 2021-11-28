@@ -36,7 +36,7 @@ export default function Post({ dark, changeMode, versionInfo, post }) {
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
       <div className="mt-2 mb-6"><TagList tags={post.data.tag} /></div>
       <Markdown options={{
-        namedCodesToUnicode: { ndash: "–" },
+        namedCodesToUnicode: { ndash: "–", minus: "−", rarr: "→" },
         overrides: {
           LinkBtn: { component: LinkBtn },
           pre: { component: PreBlock, props: { dark } },
