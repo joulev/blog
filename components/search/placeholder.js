@@ -14,7 +14,7 @@ export default function SearchPlaceholder({ type }) {
   if (type === "guide")
     return (
       <div className="text-sm text-gray-500">
-        <ul className="list-disc">
+        <ul>
           <li className={liStyles}>
             You can search for tags with the <code className="text-xs">tag:</code>{" "}
             keyword. For example, you can search for tag <Tag tag="web" /> with{" "}
