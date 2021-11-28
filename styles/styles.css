@@ -7,7 +7,11 @@
   .cap-round { stroke-linecap: round; }
   .stroke-3 { stroke-width: 3px; }
   .stroke-4 { stroke-width: 4px; }
-  .fill-none { fill: none; }
+  @variants dark {
+    .fill-none { fill: none; }
+    .fill-gray-200 { fill: theme("colors.gray.200"); }
+    .fill-gray-800 { fill: theme("colors.gray.800"); }
+  }
   .h-112 { height: 28rem; }
   .border-l-6 { border-left-width: 6px; }
   @variants hover {

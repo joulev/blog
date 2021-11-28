@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { monokaiDark, monokaiLight } from "../lib/monokai";
 import css from "./posts.heading.module.css";
@@ -61,12 +62,42 @@ export function ArticleLink({ href, title, children }) {
 
 // Based on https://stackoverflow.com/a/68179028/12419999
 function CodeBlock({ className, children, dark }) {
+  const [justCopied, setJustCopied] = useState(false);
+  const [copyTimeOut, setCopyTimeOut] = useState(null);
+  const copyToClipboard = (content) => {
+    navigator.clipboard.writeText(content);
+    setJustCopied(true);
+    clearTimeout(copyTimeOut);
+    setCopyTimeOut(setTimeout(() => setJustCopied(false), 1000));
+  }
+  const copyBtnClass = `
+    absolute top-2 right-2 z-30 p-2 cursor-pointer transition opacity-0 group-hover:opacity-100 bg-gray-200 dark:bg-gray-800
+    border border-solid rounded border-gray-400 dark:border-gray-600 hover:border-gray-500 dark:hover:border-gray-500 `;
   let lang = "text"; // default monospaced text
   if (className && className.startsWith("lang-")) lang = className.replace("lang-", "");
   return <>
-    <SyntaxHighlighter language={lang} style={dark ? monokaiDark : monokaiLight}>
-      {children}
-    </SyntaxHighlighter>
+    <div className="relative group">
+      {justCopied
+      ? <div className={copyBtnClass + "text-green-500 dark:text-green-500 hover:text-green-500 dark:hover:text-green-500"}
+          onClick={() => copyToClipboard(children)}>
+          <svg width="18" height="18">
+            <path d="M1 12 L6 17 L17 1 R" className="stroke-current stroke-2 cap-round fill-none" />
+          </svg>
+        </div>
+      : <div className={copyBtnClass + "text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"}
+          onClick={() => copyToClipboard(children)} title="Copy">
+          <svg width="18" height="18">
+            <rect x="2" y="5" width="10" height="12" rx="2" ry="2"
+              className="stroke-current stroke-2 cap-round fill-none" />
+            <rect x="6" y="1" width="10" height="12" rx="2" ry="2"
+              className="stroke-current stroke-2 cap-round fill-gray-200 dark:fill-gray-800" />
+          </svg>
+        </div>
+      }
+      <SyntaxHighlighter language={lang} style={dark ? monokaiDark : monokaiLight}>
+        {children}
+      </SyntaxHighlighter>
+    </div>
   </>;
 }
 
