@@ -5,7 +5,7 @@ module.exports = {
   important: true,
   theme: {
     fontFamily: {
-      "sans": ['"PT Sans"'],
+      "sans": ['"PT Sans"', '"Noto Sans JP"'],
       "mono": ['"Meslo LG S"'],
     },
     extend: {
