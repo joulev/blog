@@ -1,10 +1,7 @@
 import Markdown from "markdown-to-jsx";
 import Layout from "../../components/layout";
-import LinkBtn from "../../components/linkBtn";
-import PreBlock from "../../components/posts/preBlock";
-import ArticleLink from "../../components/posts/articleLink";
-import Heading from "../../components/posts/heading";
-import TagList from "../../components/tags/tagList";
+import { LinkBtn, PreBlock, ArticleLink, Heading } from "../../components/posts";
+import { TagList } from "../../components/tags";
 import Date from "../../components/date";
 import { listPosts, getPostContent } from "../../lib/getPosts";
 import getCommitInfo from "../../lib/getCommitInfo";

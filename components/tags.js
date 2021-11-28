@@ -25,3 +25,11 @@ export default function Tag({ tag, big }) {
   }
   return <TagSkeleton tag={tag} big={big} />;
 }
+
+export function TagList({ tags }) {
+  return <>
+    <div className="flex gap-2">
+      {tags.split(" ").map(tag => <Tag tag={tag} key={tag} />)}
+    </div>
+  </>;
+}

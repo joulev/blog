@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import ArticleCard from "../../components/articleCard";
 import { getTagInformation, getTags } from "../../lib/getTags";
-import Tag from "../../components/tags/tag";
+import Tag from "../../components/tags";
 import getCommitInfo from "../../lib/getCommitInfo";
 
 export function getStaticPaths() {

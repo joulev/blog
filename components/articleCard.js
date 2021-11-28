@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { truncatePlainContent } from "../lib/utils";
 import Date from "./date";
-import TagList from "./tags/tagList";
+import { TagList } from "./tags";
 
 export default function ArticleCard({ post }) {
   return <>
