@@ -6,11 +6,11 @@ time: "2021-11-28T10:35:27.365+08:00"
 
 ## General information
 
-* Module: [Discrete Structures](https://nusmods.com/modules/CS1231)
-* Taken in: AY2021-2022 Semester 1
-* Professor: Y.C. Tay and Wong Tin Lok "Lawrence"
-* Expected grade: B &rarr; A-
-* Actual grade: TBA
+* **Module:** [Discrete Structures](https://nusmods.com/modules/CS1231)
+* **Taken in:** AY2021-2022 Semester 1
+* **Professor:** Y.C. Tay and Wong Tin Lok "Lawrence"
+* **Expected grade:** B &rarr; A-
+* **Actual grade:** TBA
 
 ## Module review
 

@@ -6,11 +6,11 @@ time: "2021-11-28T11:05:39.959+08:00"
 
 ## General information
 
-* Module: [Engineering Calculus](https://nusmods.com/modules/MA1511)
-* Taken in: AY2021-2022 Semester 1 (Mini-semester A)
-* Professor: Tuan Seng Chew
-* Expected grade: A- &rarr; A
-* Actual grade: TBA
+* **Module:** [Engineering Calculus](https://nusmods.com/modules/MA1511)
+* **Taken in:** AY2021-2022 Semester 1 (Mini-semester A)
+* **Professor:** Tuan Seng Chew
+* **Expected grade:** A- &rarr; A
+* **Actual grade:** TBA
 
 ## Module review
 

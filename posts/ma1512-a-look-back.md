@@ -6,11 +6,11 @@ time: "2021-11-28T12:13:47.337+08:00"
 
 ## General information
 
-* Module: [Differential Equations for Engineering](https://nusmods.com/modules/MA1512)
-* Taken in: AY2021-2022 Semester 1 (Mini-semester B)
-* Professor: Tuan Seng Chew
-* Expected grade: B &rarr; B+
-* Actual grade: TBA
+* **Module:** [Differential Equations for Engineering](https://nusmods.com/modules/MA1512)
+* **Taken in:** AY2021-2022 Semester 1 (Mini-semester B)
+* **Professor:** Tuan Seng Chew
+* **Expected grade:** B &rarr; B+
+* **Actual grade:** TBA
 
 ## Module review
 
