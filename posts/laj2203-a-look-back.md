@@ -9,7 +9,7 @@ time: "2021-11-28T12:41:25.911+08:00"
 * **Module:** [Japanese 4](https://nusmods.com/modules/LAJ2203)
 * **Taken in:** AY2021-2022 Semester 1
 * **Professor:** Yuzuru Hamasaki and Ayari Suhama (as tutor)
-* **Expected grade:** A- &rarr; A
+* **Expected grade:** A&minus; &rarr; A
 * **Actual grade:** TBA
 
 ## Module review

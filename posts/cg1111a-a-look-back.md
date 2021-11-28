@@ -9,7 +9,7 @@ time: "2021-11-28T09:47:18.887+08:00"
 * **Module:** [Engineering Principles and Practice I](https://nusmods.com/modules/CG1111A)
 * **Taken in:** AY2021-2022 Semester 1
 * **Professor:** Ravi S/O Suppiah (mainly)
-* **Expected grade:** B+ &rarr; A-
+* **Expected grade:** B+ &rarr; A&minus;
 * **Actual grade:** TBA
 
 ## Module review
