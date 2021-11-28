@@ -27,8 +27,7 @@ export function getStaticProps({ params }) {
 
 export default function TagPage({ dark, changeMode, versionInfo, tag, description, posts }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title={`Tag [${tag}]`} sideLink={0}>
+    <Layout title={`Tag [${tag}]`} sideLink={0} {...{ dark, changeMode, versionInfo }}>
       <Tag tag={tag} big />
       <p className={description === "(no description)" ? "text-gray-500" : ""}>{description}</p>
       {posts.map(post => <ArticleCard post={post} key={post.name} />)}

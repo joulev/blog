@@ -40,8 +40,7 @@ export default function Search({ dark, changeMode, versionInfo, posts }) {
   };
 
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title="Search" sideLink={3}>
+    <Layout title="Search" sideLink={3} {...{ dark, changeMode, versionInfo }}>
       <SearchBox onChange={q => updateQuery(q)} initial={query} />
       {(() => {
         const parsedQuery = parseSearchQuery(query);

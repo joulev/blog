@@ -28,7 +28,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
         ${navbarShown ? "h-112" : "h-0"} transition-all duration-300 md:transition-none
         md:h-screen md:sticky md:inset-y-0 md:mx-8 md:shadow-none
       `}>
-        <Sidebar dark={dark} changeMode={changeMode} versionInfo={versionInfo} sideLink={sideLink} />
+        <Sidebar {...{ dark, changeMode, versionInfo, sideLink }} />
       </div>
       <div className="md:col-span-2 md:mx-8 py-14">
         {children}

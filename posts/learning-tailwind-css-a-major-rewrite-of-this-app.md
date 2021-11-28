@@ -152,7 +152,7 @@ written with pure CSS.
 
 ```jsx
 <div className={`... ${navbarShown ? "h-112" : "h-0"} ...`}>
-  <Sidebar dark={dark} changeMode={changeMode} versionInfo={versionInfo} sideLink={sideLink} />
+  <Sidebar {...{ dark, changeMode, versionInfo, sideLink }} />
 </div>
 ```
 

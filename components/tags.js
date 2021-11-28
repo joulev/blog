@@ -19,11 +19,11 @@ export default function Tag({ tag, big }) {
   if (big) {
     return <>
       <div className="mb-6">
-        <TagSkeleton tag={tag} big={big} />
+        <TagSkeleton {...{ tag, big }} />
       </div>
     </>;
   }
-  return <TagSkeleton tag={tag} big={big} />;
+  return <TagSkeleton {...{ tag, big }} />;
 }
 
 export function TagList({ tags }) {

@@ -8,8 +8,7 @@ export function getStaticProps() {
 
 export default function Home({ dark, changeMode, versionInfo }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title="About me" sideLink={2}>
+    <Layout title="About me" sideLink={2} {...{ dark, changeMode, versionInfo }}>
       <h1>About me</h1>
       <p>Hello. I am Dung. A Computer Engineering student in the National University of Singapore.</p>
       <p>

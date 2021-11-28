@@ -27,8 +27,7 @@ export function getStaticProps({ params }) {
 
 export default function Post({ dark, changeMode, versionInfo, post }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title={post.data.title} activeLink={0}>
+    <Layout title={post.data.title} activeLink={0} {...{ dark, changeMode, versionInfo }}>
       <h1>{post.data.title}</h1>
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
       <div className="mt-2 mb-6"><TagList tags={post.data.tag} /></div>

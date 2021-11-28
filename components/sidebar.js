@@ -60,10 +60,10 @@ export default function Sidebar({ dark, changeMode, versionInfo, sideLink }) {
       <Info />
       <Navlink active={sideLink} />
       <div className="md:hidden flex flex-row-reverse">
-        <DarkToggler dark={dark} changeMode={changeMode} />
+        <DarkToggler {...{ dark, changeMode }} />
       </div>
       <div className="absolute bottom-4 hidden md:block">
-        <DarkToggler dark={dark} changeMode={changeMode} />
+        <DarkToggler {...{ dark, changeMode }} />
         <Footer versionInfo={versionInfo} />
       </div>
     </div>

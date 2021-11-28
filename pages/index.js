@@ -11,8 +11,7 @@ export function getStaticProps() {
 
 export default function Home({ dark, changeMode, posts, versionInfo }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title="Home" sideLink={1}>
+    <Layout title="Home" sideLink={1} {...{ dark, changeMode, versionInfo }}>
       <h1>Posts</h1>
       {posts.map(post => <ArticleCard post={post} key={post.name} />)}
     </Layout>

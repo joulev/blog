@@ -8,8 +8,7 @@ export function getStaticProps() {
 
 export default function NotFound({ dark, changeMode, versionInfo }) {
   return <>
-    <Layout dark={dark} changeMode={changeMode} versionInfo={versionInfo}
-      title="Not found" sideLink={0}>
+    <Layout title="Not found" sideLink={0} {...{ dark, changeMode, versionInfo }}>
       <h1>Page not found</h1>
       <p>The page you requested could not be found.</p>
       <p>
