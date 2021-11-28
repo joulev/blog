@@ -2,7 +2,8 @@
 
 ... although being called that, this site is not quite a blog site yet. Rather,
 it's more like a playground for me to learn and test [Next.js](https://nextjs.org)
-out.
+out. And (temporarily) store stuff I write that I want to easily access it
+anytime and anywhere I want to.
 
 ## Major changes:
 
