@@ -78,13 +78,13 @@ function CodeBlock({ className, children, dark }) {
   return <>
     <div className="relative group">
       {justCopied
-      ? <div className={copyBtnClass + "text-green-500 dark:text-green-500 hover:text-green-500 dark:hover:text-green-500"}
+      ? <div className={copyBtnClass + "text-green-500 hover:text-green-500"}
           onClick={() => copyToClipboard(children)}>
           <svg width="18" height="18">
             <path d="M1 12 L6 17 L17 1 R" className="stroke-current stroke-2 cap-round fill-none" />
           </svg>
         </div>
-      : <div className={copyBtnClass + "text-gray-500 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"}
+      : <div className={copyBtnClass + "text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"}
           onClick={() => copyToClipboard(children)} title="Copy">
           <svg width="18" height="18">
             <rect x="2" y="5" width="10" height="12" rx="2" ry="2"
