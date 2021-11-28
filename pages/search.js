@@ -53,7 +53,14 @@ export default function Search({ dark, changeMode, versionInfo, posts }) {
           </>;
         return <>
           <p><em>Found {postsFiltered.length} result{postsFiltered.length != 1 && "s"}</em></p>
-          {postsFiltered.map(post => <ArticleCard post={post} key={post.name} />)}
+          {postsFiltered.map(post => <ArticleCard post={post} key={post.name}>
+            <div dangerouslySetInnerHTML={{ __html: post.preview }} />
+            {post.countNotPreview > 0 && <>
+              <div className="text-gray-500 mt-4">
+                ({post.countNotPreview} more result{post.countNotPreview !== 1 ? "s" : ""} on this page)
+              </div>
+            </>}
+          </ArticleCard>)}
         </>;
       })()}
     </Layout>
