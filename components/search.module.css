@@ -1,0 +1,2 @@
+.small { @apply text-sm; }
+.small code { @apply text-xs; }

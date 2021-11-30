@@ -1,4 +1,5 @@
 import Tag from "./tags";
+import css from "./search.module.css";
 
 export function SearchBox({ onChange, initial }) {
   return <>
@@ -22,17 +23,24 @@ export function SearchPlaceholder({ type }) {
     </>;
   if (type === "guide")
     return (
-      <div className="text-sm text-gray-500">
+      <div className={`${css.small} text-gray-500`}>
         <ul>
           <li className="mb-2 ml-4">
-            You can search for tags with the <code className="text-xs">tag:</code>{" "}
-            keyword. For example, you can search for tag <Tag tag="web" /> with{" "}
-            <code className="text-xs">tag:web</code>.
+            You can search for tags with the <code>tag:</code> keyword. For
+            example, you can search for tag <Tag tag="web" /> with{" "}
+            <code>tag:web</code>.
           </li>
           <li className="mb-2 ml-4">
             While posts do not have to match all words in the query to be matched,
-            if you use any <code className="text-xs">tag:</code> keywords in the
-            query, posts have to contain all of those keywords to be matched.
+            if you use any <code>tag:</code> keywords in the query, posts have
+            to contain all of those keywords to be matched.
+          </li>
+          <li className="mb-2 ml-4">
+            The search engine separate the query by spaces. However, if you want
+            to include spaces in the query, you can wrap everything inside a pair
+            of quotation marks, for example <code>hello "world and" earth</code>{" "}
+            will search for three query "words": <code>hello</code>, <code>world and</code>{" "}
+            and <code>earth</code>.
           </li>
           <li className="mb-2 ml-4">
             This search engine does not take misspelling into account. Thus, to
