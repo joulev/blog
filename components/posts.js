@@ -81,7 +81,7 @@ function CodeBlock({ className, children, dark }) {
       ? <div className={copyBtnClass + "text-green-550 dark:text-green-450 hover:text-green-550 dark:hover:text-green-450"}
           onClick={() => copyToClipboard(children)}>
           <svg width="18" height="18">
-            <path d="M1 12 L6 17 L17 1 Z" className="stroke-current stroke-2 cap-round fill-none" />
+            <path d="M1 12 L6 17 L17 1" className="stroke-current stroke-2 cap-round fill-none" />
           </svg>
         </div>
       : <div className={copyBtnClass + "text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"}
