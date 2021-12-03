@@ -33,15 +33,13 @@ export default function Search({ dark, changeMode, versionInfo, posts }) {
     setQuery(q);
     setPostsFiltered(filterPosts(posts, q));
   }, [posts]);
-  const updateQuery = query => {
-    setQuery(query);
+  useEffect(() => {
     router.push(query === "" ? "/search" : `/search?q=${encodeURIComponent(query)}`, undefined, { shallow: true });
     setPostsFiltered(filterPosts(posts, query));
-  };
-
+  }, [query]);
   return <>
     <Layout title={query ? `${query} – Search` : "Search"} sideLink={3} {...{ dark, changeMode, versionInfo }}>
-      <SearchBox onChange={q => updateQuery(q)} initial={query} />
+      <SearchBox onChange={q => setQuery(q)} initial={query} />
       {(() => {
         const parsedQuery = parseSearchQuery(query);
         if (parsedQuery.tags.length === 0 && parsedQuery.words.length === 0)
