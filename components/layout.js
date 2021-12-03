@@ -12,9 +12,7 @@ export default function Layout({ dark, changeMode, versionInfo, title, sideLink,
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  const onScroll = () => {
-    if (window.scrollY < 30) setDownEnough(false); else setDownEnough(true);
-  };
+  const onScroll = () => setDownEnough(window.scrollY >= 30);
   return <>
     <Head>
       <title>{title} – joulev's blog</title>

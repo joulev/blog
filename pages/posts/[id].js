@@ -6,23 +6,15 @@ import Date from "../../components/date";
 import { listPosts, getPostContent } from "../../lib/getPosts";
 import getCommitInfo from "../../lib/getCommitInfo";
 
-export function getStaticPaths() {
-  const posts = listPosts();
-  const routerArr = posts.map(post => {
-    return { params: { id: post.name, } }
-  });
-  return { paths: routerArr, fallback: false }
-}
+export const getStaticPaths = () => ({
+  paths: listPosts().map(post => ({ params: { id: post.name, } })),
+  fallback: false
+});
 
 export function getStaticProps({ params }) {
   const post = getPostContent(params.id);
   const versionInfo = getCommitInfo();
-  return {
-    props: {
-      versionInfo,
-      post
-    }
-  }
+  return { props: { versionInfo, post } }
 }
 
 export default function Post({ dark, changeMode, versionInfo, post }) {

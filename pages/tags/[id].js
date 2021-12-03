@@ -4,13 +4,10 @@ import { getTagInformation, getTags } from "../../lib/getTags";
 import Tag from "../../components/tags";
 import getCommitInfo from "../../lib/getCommitInfo";
 
-export function getStaticPaths() {
-  const tags = getTags();
-  const routerArr = tags.map(tag => {
-    return { params: { id: tag } };
-  });
-  return { paths: routerArr, fallback: false }
-}
+export const getStaticPaths = () => ({
+  paths: getTags().map(tag => ({ params: { id: tag } })),
+  fallback: false
+});
 
 export function getStaticProps({ params }) {
   const info = getTagInformation(params.id);

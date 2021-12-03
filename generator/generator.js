@@ -35,7 +35,7 @@ time: "${frontMatter.time}"
 ---
 ${matterRes.content}`;
 
-fs.writeFile(dstFile, output, { flag: "wx" }, (e) => {
+fs.writeFile(dstFile, output, { flag: "wx" }, e => {
   if (e) console.error(`Write file ${dstFileName}: unsuccessful\n${e}`);
   else console.log(`Write file ${dstFileName}: successful`);
 });

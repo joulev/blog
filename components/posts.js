@@ -64,7 +64,7 @@ export function ArticleLink({ href, title, children }) {
 function CodeBlock({ className, children, dark }) {
   const [justCopied, setJustCopied] = useState(false);
   const [copyTimeOut, setCopyTimeOut] = useState(null);
-  const copyToClipboard = (content) => {
+  const copyToClipboard = content => {
     navigator.clipboard.writeText(content);
     setJustCopied(true);
     clearTimeout(copyTimeOut);
