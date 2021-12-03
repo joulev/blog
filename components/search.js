@@ -3,12 +3,23 @@ import css from "./search.module.css";
 
 export function SearchBox({ onChange, initial }) {
   return <>
-    <input type="text" placeholder="Search…" onChange={(e) => onChange(e.target.value)}
-      defaultValue={initial} className="
-        w-full outline-none border rounded border-solid border-gray-400 dark:border-gray-600
-        placeholder-gray-500 text-xl px-4 py-2 mb-5 bg-gray-200 dark:bg-gray-800
-        focus:border-primary-600 dark:focus:border-primary-400
-      " />
+    <div className="relative mb-5">
+      <input type="text" placeholder="Search…" onChange={(e) => onChange(e.target.value)}
+        value={initial} className="
+          w-full outline-none border rounded border-solid border-gray-400 dark:border-gray-600
+          placeholder-gray-500 text-xl px-4 py-2 bg-gray-200 dark:bg-gray-800
+          focus:border-primary-600 dark:focus:border-primary-400 peer
+        " />
+      <div className="absolute inset-y-0 right-2 flex items-center transition opacity-0 peer-focus:opacity-100">
+        <div className="z-30 p-2 cursor-pointer transition text-gray-500 hover:text-gray-900 dark:hover:text-gray-100"
+          onClick={() => onChange("")} title="Clear">
+          <svg width="18" height="18">
+            <line x1="3" y1="3" x2="15" y2="15" className="stroke-current stroke-2 cap-round" />
+            <line x1="3" y1="15" x2="15" y2="3" className="stroke-current stroke-2 cap-round" />
+          </svg>
+        </div>
+      </div>
+    </div>
   </>;
 }
 
