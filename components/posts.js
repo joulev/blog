@@ -1,28 +1,8 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState, createElement } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { monokaiDark, monokaiLight } from "../lib/monokai";
 import css from "./posts.heading.module.css";
-
-function HeadingElement({ level, children }) {
-  // would love to know a more elegant way...
-  switch (level) {
-    case 1:
-      return <h1>{children}</h1>;
-    case 2:
-      return <h2>{children}</h2>;
-    case 3:
-      return <h3>{children}</h3>;
-    case 4:
-      return <h4>{children}</h4>;
-    case 5:
-      return <h5>{children}</h5>;
-    case 6:
-      return <h6>{children}</h6>;
-    default:
-      return <span>{children}</span>;
-  }
-}
 
 export function Heading({ level, children }) {
   const idText = children[0].toLowerCase().replace(/[^\w]+/g, "-");
@@ -37,7 +17,7 @@ export function Heading({ level, children }) {
           #
         </a>
       </div>
-      <HeadingElement level={level}>{children[0]}</HeadingElement>
+      {1 <= level && level <= 6 ? createElement(`h${level}`, null, children[0]) : <span>{children[0]}</span>}
     </div>
   </>;
 }
