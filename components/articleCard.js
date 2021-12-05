@@ -3,7 +3,7 @@ import { truncatePlainContent } from "../lib/utils";
 import Date from "./date";
 import { TagList } from "./tags";
 
-export default function ArticleCard({ post, children }) {
+export default function ArticleCard({ post, tagCount, children }) {
   return <>
     <div className="
       rounded border border-solid p-4 mb-5
@@ -14,7 +14,7 @@ export default function ArticleCard({ post, children }) {
       </div>
       <div className="text-md text-gray-500"><Date time={post.time} /></div>
       <div className="my-4">{children ? children : truncatePlainContent(post.plain)}</div>
-      <TagList tags={post.tag} />
+      <TagList tags={post.tag} tagCount={tagCount} />
     </div>
   </>;
 }

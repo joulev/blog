@@ -16,7 +16,7 @@ function TagLink({ tag, big }) {
   </>;
 }
 
-export default function Tag({ tag, big }) {
+export default function Tag({ tag, count, big }) {
   if (big) {
     return <>
       <div className="mb-6">
@@ -32,19 +32,19 @@ export default function Tag({ tag, big }) {
         absolute top-full left-1/2 -translate-x-1/2 mt-2 p-4 w-72
         rounded border border-solid border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-800 shadow-lg
       ">
-        <TagLink {...{ tag, big }} />
+        <TagLink {...{ tag, big }} /><span className="text-sm text-gray-500 ml-1">&times;{count}</span>
         <div className={`mt-3 text-sm ${!tagDescriptions[tag] && "text-gray-500"}`}>
-          {tagDescriptions[tag] || "(no description)"}
+          {tagDescriptions[tag] || "(no description)"}<br />
         </div>
       </div>
     </div>
   </>;
 }
 
-export function TagList({ tags }) {
+export function TagList({ tags, tagCount }) {
   return <>
     <div className="flex gap-2">
-      {tags.split(" ").map(tag => <Tag tag={tag} key={tag} />)}
+      {tags.split(" ").map(tag => <Tag tag={tag} count={tagCount[tag]} key={tag} />)}
     </div>
   </>;
 }

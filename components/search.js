@@ -23,7 +23,7 @@ export function SearchBox({ onChange, initial }) {
   </>;
 }
 
-export function SearchPlaceholder({ type }) {
+export function SearchPlaceholder({ type, tagCount }) {
   if (type === "not found")
     return <>
       <div>
@@ -38,7 +38,7 @@ export function SearchPlaceholder({ type }) {
         <ul>
           <li className="mb-2 ml-4">
             You can search for tags with the <code>tag:</code> keyword. For
-            example, you can search for tag <Tag tag="web" /> with{" "}
+            example, you can search for tag <Tag tag="web" count={tagCount["web"]} /> with{" "}
             <code>tag:web</code>.
           </li>
           <li className="mb-2 ml-4">

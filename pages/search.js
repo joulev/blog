@@ -4,16 +4,18 @@ import ArticleCard from "../components/articleCard";
 import Layout from "../components/layout";
 import { SearchBox, SearchPlaceholder } from "../components/search";
 import { listPosts } from "../lib/getPosts";
+import { getTagCount } from "../lib/getTags";
 import { filterPosts, parseSearchQuery } from "../lib/search";
 import getCommitInfo from "../lib/getCommitInfo";
 
 export function getStaticProps() {
   const posts = listPosts();
+  const tagCount = getTagCount();
   const versionInfo = getCommitInfo();
-  return { props: { posts, versionInfo } }
+  return { props: { posts, tagCount, versionInfo } }
 }
 
-export default function Search({ dark, changeMode, versionInfo, posts }) {
+export default function Search({ dark, changeMode, versionInfo, posts, tagCount }) {
   const router = useRouter();
   // for some reasons router doesnt work well, so I have to implement it myself
   const getQuery = () => {
@@ -43,15 +45,15 @@ export default function Search({ dark, changeMode, versionInfo, posts }) {
       {(() => {
         const parsedQuery = parseSearchQuery(query);
         if (parsedQuery.tags.length === 0 && parsedQuery.words.length === 0)
-          return <SearchPlaceholder type="guide" />;
+          return <SearchPlaceholder type="guide" tagCount={tagCount} />;
         if (postsFiltered.length === 0)
           return <>
             <SearchPlaceholder type="not found" />
-            <SearchPlaceholder type="guide" />
+            <SearchPlaceholder type="guide" tagCount={tagCount} />
           </>;
         return <>
           <p><em>Found {postsFiltered.length} result{postsFiltered.length != 1 && "s"}</em></p>
-          {postsFiltered.map(post => <ArticleCard post={post} key={post.name}>
+          {postsFiltered.map(post => <ArticleCard {...{ post, tagCount }} key={post.name}>
             <div dangerouslySetInnerHTML={{ __html: post.preview }} />
             {post.countNotPreview > 0 && <>
               <div className="text-gray-500 mt-4">
