@@ -38,7 +38,7 @@ export default function Search({ dark, changeMode, versionInfo, posts, tagCount 
   useEffect(() => {
     router.push(query === "" ? "/search" : `/search?q=${encodeURIComponent(query)}`, undefined, { shallow: true });
     setPostsFiltered(filterPosts(posts, query));
-  }, [posts, router, query]);
+  }, [query]);
   return <>
     <Layout title={query ? `${query} – Search` : "Search"} sideLink={3} {...{ dark, changeMode, versionInfo }}>
       <SearchBox onChange={q => setQuery(q)} initial={query} />
