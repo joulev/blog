@@ -25,7 +25,7 @@ export default function Tag({ tag, count, big }) {
     </>;
   }
   return <>
-    <div className="group relative">
+    <div className="group relative inline-block">
       <TagLink {...{ tag, big }} />
       <div className="hidden md:block
         invisible opacity-0 group-hover:visible group-hover:opacity-100 z-40 transition delay-500
