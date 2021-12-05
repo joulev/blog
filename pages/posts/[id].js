@@ -5,6 +5,7 @@ import { TagList } from "../../components/tags";
 import Date from "../../components/date";
 import { listPosts, getPostContent } from "../../lib/getPosts";
 import getCommitInfo from "../../lib/getCommitInfo";
+import { getTagCount } from "../../lib/getTags";
 
 export const getStaticPaths = () => ({
   paths: listPosts().map(post => ({ params: { id: post.name, } })),
@@ -13,16 +14,17 @@ export const getStaticPaths = () => ({
 
 export function getStaticProps({ params }) {
   const post = getPostContent(params.id);
+  const tagCount = getTagCount();
   const versionInfo = getCommitInfo();
-  return { props: { versionInfo, post } }
+  return { props: { versionInfo, tagCount, post } }
 }
 
-export default function Post({ dark, changeMode, versionInfo, post }) {
+export default function Post({ dark, changeMode, versionInfo, post, tagCount }) {
   return <>
     <Layout title={post.data.title} activeLink={0} {...{ dark, changeMode, versionInfo }}>
       <h1>{post.data.title}</h1>
       <div className="mt-3 text-xl text-gray-500"><Date time={post.data.time} /></div>
-      <div className="mt-2 mb-6"><TagList tags={post.data.tag} /></div>
+      <div className="mt-2 mb-6"><TagList tags={post.data.tag} tagCount={tagCount} /></div>
       <Markdown options={{
         namedCodesToUnicode: { ndash: "–", minus: "−", rarr: "→" },
         overrides: {
