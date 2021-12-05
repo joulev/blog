@@ -16,7 +16,7 @@ function TagLink({ tag, big }) {
   </>;
 }
 
-export default function Tag({ tag, count, big }) {
+export default function Tag({ tag, count, big, tooltiptop }) {
   if (big) {
     return <>
       <div className="mb-6">
@@ -27,11 +27,11 @@ export default function Tag({ tag, count, big }) {
   return <>
     <div className="group relative inline-block">
       <TagLink {...{ tag, big }} />
-      <div className="hidden md:block
+      <div className={`hidden md:block
         invisible opacity-0 group-hover:visible group-hover:opacity-100 z-40 transition delay-500
-        absolute top-full left-1/2 -translate-x-1/2 mt-2 p-4 w-72
+        absolute ${tooltiptop ? "bottom-full mb-2" : "top-full mt-2"} left-1/2 -translate-x-1/2 p-4 w-72
         rounded border border-solid border-gray-400 dark:border-gray-600 bg-gray-200 dark:bg-gray-800 shadow-lg
-      ">
+      `}>
         <TagLink {...{ tag, big }} /><span className="text-sm text-gray-500 ml-1">&times;{count}</span>
         <div className={`mt-3 text-sm ${!tagDescriptions[tag] && "text-gray-500"}`}>
           {tagDescriptions[tag] || "(no description)"}<br />
@@ -41,10 +41,10 @@ export default function Tag({ tag, count, big }) {
   </>;
 }
 
-export function TagList({ tags, tagCount }) {
+export function TagList({ tags, tagCount, bottom }) {
   return <>
     <div className="flex gap-2">
-      {tags.split(" ").map(tag => <Tag tag={tag} count={tagCount[tag]} key={tag} />)}
+      {tags.split(" ").map(tag => <Tag tag={tag} count={tagCount[tag]} tooltiptop={bottom} key={tag} />)}
     </div>
   </>;
 }

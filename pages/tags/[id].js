@@ -29,7 +29,7 @@ export default function TagPage({ dark, changeMode, versionInfo, tag, descriptio
     <Layout title={`Tag [${tag}]`} sideLink={0} {...{ dark, changeMode, versionInfo }}>
       <Tag tag={tag} big />
       <p className={description === "(no description)" ? "text-gray-500" : ""}>{description}</p>
-      {posts.map(post => <ArticleCard {...{ post, tagCount }} key={post.name} />)}
+      {posts.map((post, idx) => <ArticleCard {...{ post, tagCount }} bottom={idx === posts.length - 1} key={post.name} />)}
     </Layout>
   </>;
 }

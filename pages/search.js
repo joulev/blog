@@ -53,7 +53,7 @@ export default function Search({ dark, changeMode, versionInfo, posts, tagCount 
           </>;
         return <>
           <p><em>Found {postsFiltered.length} result{postsFiltered.length != 1 && "s"}</em></p>
-          {postsFiltered.map(post => <ArticleCard {...{ post, tagCount }} key={post.name}>
+          {postsFiltered.map((post, idx) => <ArticleCard {...{ post, tagCount }} bottom={idx === postsFiltered.length - 1} key={post.name}>
             <div dangerouslySetInnerHTML={{ __html: post.preview }} />
             {post.countNotPreview > 0 && <>
               <div className="text-gray-500 mt-4">
