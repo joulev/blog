@@ -10,7 +10,7 @@ time: "2021-11-28T09:47:18.887+08:00"
 * **Taken in:** AY2021-2022 Semester 1
 * **Professor:** Ravi S/O Suppiah (mainly)
 * **Expected grade:** B+ &rarr; A&minus;
-* **Actual grade:** TBA
+* **Actual grade:** as expected
 
 ## Module review
 

@@ -10,7 +10,7 @@ time: "2021-11-28T12:13:47.337+08:00"
 * **Taken in:** AY2021-2022 Semester 1 (Mini-semester B)
 * **Professor:** Tuan Seng Chew
 * **Expected grade:** B &rarr; B+
-* **Actual grade:** TBA
+* **Actual grade:** higher than expected
 
 ## Module review
 

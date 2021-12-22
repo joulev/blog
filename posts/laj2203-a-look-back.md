@@ -10,7 +10,7 @@ time: "2021-11-28T12:41:25.911+08:00"
 * **Taken in:** AY2021-2022 Semester 1
 * **Professor:** Yuzuru Hamasaki and Ayari Suhama (as tutor)
 * **Expected grade:** A&minus; &rarr; A
-* **Actual grade:** TBA
+* **Actual grade:** as expected
 
 ## Module review
 

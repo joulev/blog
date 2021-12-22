@@ -10,7 +10,7 @@ time: "2021-11-28T10:18:51.985+08:00"
 * **Taken in:** AY2021-2022 Semester 1
 * **Professor:** Wei Tsang Ooi
 * **Expected grade:** A &rarr; A+
-* **Actual grade:** TBA
+* **Actual grade:** as expected
 
 ## Module review
 
