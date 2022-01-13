@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => setLoaded(router.isReady), [router]);
   const [dark, setDark] = useState(false);
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
+    let storedTheme = localStorage.getItem("theme");
     if (!storedTheme) {
       if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
         storedTheme = "light";
