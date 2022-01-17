@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
-    "markdown-to-jsx": "^7.1.5",
+    "markdown-to-jsx": "^7.1.6",
     "moment": "^2.29.1",
     "next": "latest",
     "react": "^17.0.2",
